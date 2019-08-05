@@ -1,16 +1,28 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
+    <Header></Header>
+    <router-view />
+    <Footer></Footer>
   </div>
 </template>
+<script>
+import "../src/assets/rem";
+import Header from "./components/header/header.vue";
+import Footer from "./components/footer/footer.vue";
+export default {
+  data() {
+    return {};
+  },
+  components: {
+    Header,
+    Footer
+  }
+};
+</script>
 
 <style lang="scss">
 #app {
-margin: 0px;
-padding: 0px;
+  margin: 0px;
+  padding: 0px;
 }
 </style>

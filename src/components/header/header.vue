@@ -1,45 +1,13 @@
 <template>
   <!-- 导航 -->
-  <div class="nav" @mouseover="mouseOut()">
-    <div class="navimg_left">
-      <img src="@/assets/imgs/home/navlogo.png" alt />
-    </div>
+  <div class="nav">
     <div class="navcontent">
-      <div class="navcontent_right" @mouseover="mouseOut()">
-        <ul class="navlist">
-          <router-link to="/home">
-            <li @click="clickdown(0)" :style="{borderBottom:active==0?'2px solid #b81b22':'0'}">首页</li>
-          </router-link>
-          <router-link to="/about">
-            <li @click="clickdown(1)" :style="{borderBottom:active==1?'2px solid #b81b22':'0'}">关于英铎</li>
-          </router-link>
-          <router-link to="/business">
-            <li
-              class="yewu"
-              ref="yewu"
-              @mouseover="mouseOver()"
-              @click="clickdown(2)"
-              :style="{borderBottom:active==2?'2px solid #b81b22':'0'}"
-            >
-              业务介绍
-              <ul class="list" ref="downlist" @mouseout="mouseOut()" @click="none()">
-                <!-- <router-link to="/investment"> -->
-                <li
-                  v-for="(item,index) in business_list"
-                  :key="index"
-                  @click="xiang(item.id)"
-                >{{item.title}}</li>
-                <!-- </router-link> -->
-              </ul>
-            </li>
-          </router-link>
-          <router-link to="/success">
-            <li @click="clickdown(3)" :style="{borderBottom:active==3?'2px solid #b81b22':'0'}">成功案例</li>
-          </router-link>
-          <router-link to="/contactus">
-            <li @click="clickdown(4)" :style="{borderBottom:active==4?'2px solid #b81b22':'0'}">联系我们</li>
-          </router-link>
-        </ul>
+      <div class="navimg_left">
+        <img src="../../assets/imgs/home/navlogo.png" alt />
+      </div>
+      <div class="navimg_right">
+        <img src="../../assets/imgs/home/index-menu.jpg" alt v-show="istrue==0" @click="close(1)" />
+        <img src="../../assets/imgs/home/close.png" alt v-show="istrue==1" @click="close(0)" />
       </div>
     </div>
   </div>
@@ -53,7 +21,8 @@ export default {
       mouseout: "",
       business_id: 0,
       business_list: [],
-      active: 0
+      active: 0,
+      istrue: 0
     };
   },
   created() {
@@ -64,47 +33,10 @@ export default {
       this.active = sessionStorage.getItem("titleactive");
     }
   },
-  watch: {
-    "$store.state.item_id": function() {
-      //你需要执行的代码
-      this.active = this.$store.state.item_id;
-      console.log(this.active);
-      console.log(this.$store.state.item_id);
-    }
-  },
+  watch: {},
   methods: {
-    mouseOver: function() {
-      window.event ? (window.event.cancelBubble = true) : e.stopPropagation();
-      this.$refs.downlist.style.display = "inline-block";
-    },
-    mouseOut: function() {
-      this.$refs.downlist.style.display = "none";
-    },
-    none: function() {
-      this.$refs.downlist.style.display = "none";
-    },
-    clickdown: function(x) {
-      //点击那个标签哪个下面就变色
-      sessionStorage.setItem("titleactive", x);
-      this.active = x;
-    },
-    // stopBubble: function(e) {
-    //   console.log(e);
-    //   if (e && e.stopPropagation) {
-    //     //非IE
-    //     e.stopPropagation();
-    //   } else {
-    //     //IE
-    //     window.event.cancelBubble = true;
-    //   }
-    // },
-    //阻止浏览器的默认行为
-    stopDefault: function(e) {
-      //阻止默认浏览器动作(W3C)
-      if (e && e.preventDefault) e.preventDefault();
-      //IE中阻止函数器默认动作的方式
-      else window.event.returnValue = false;
-      // return false;
+    close: function(x) {
+      this.istrue = x;
     },
     xiang(row) {
       // 阻止浏览器的冒泡
@@ -146,93 +78,33 @@ export default {
 </script>
 <style  scoped>
 .nav {
-  width: 100%;
-  height: 100px;
+  width: 10rem;
+  height: 1.33rem;
   background-color: #ffffff;
+  box-shadow: inset 0rem -0.01rem 0rem 0rem rgba(0, 0, 0, 0.1);
+}
+.navcontent {
+  width: 9.2rem;
+  height: 100%;
+  margin: 0px auto;
   display: flex;
   align-items: center;
+  justify-content: space-between;
 }
 .navimg_left {
-  width: 240px;
-  min-width: 240px;
-  height: 49px;
-  margin-left: 85px;
+  width: 2.67rem;
+  height: 0.53rem;
 }
 .navimg_left img {
   width: 100%;
   height: 100%;
 }
-.navcontent {
-  width: 1200px;
-  height: 19px;
-  display: flex;
-  justify-content: flex-end;
+.navimg_right {
+  width: 0.48rem;
+  height: 0.33rem;
 }
-.navcontent_right {
-  width: 536px;
-  height: 19px;
-  position: relative;
-}
-.navcontent_right .navlist {
-  display: flex;
-  justify-content: space-between;
-}
-.navcontent_right .navlist li {
-  width: 80px;
-  font-family: MicrosoftYaHei;
-  font-size: 18px;
-  font-weight: normal;
-  font-stretch: normal;
-  line-height: 24px;
-  letter-spacing: 0px;
-  color: #222222;
-  text-align: center;
-  padding-bottom: 7px;
-  box-sizing: border-box;
-}
-.navcontent_right .navlist li:hover {
-  padding-bottom: 7px;
-  border-bottom: 2px solid #b81b22 !important;
-}
-.yewu {
-  position: relative;
-  /* height: 50px; */
-}
-.list {
-  width: 160px;
-  height: 268px;
-  background-color: #ffffff;
-  /* margin-top: 60px; */
-  position: absolute;
-  top: 33px;
-  left: -40px;
-  box-sizing: border-box;
-  overflow: hidden;
-  display: none;
-  z-index: 99;
-}
-
-.list li {
-  width: 160px !important;
-  height: 60.5px;
-  font-family: MicrosoftYaHei;
-  font-size: 16px;
-  font-weight: normal;
-  font-stretch: normal;
-  line-height: 61px !important;
-  letter-spacing: 0px;
-  color: #222222;
-  text-align: center;
-  border-bottom: 1px solid rgba(225, 225, 225, 0.5);
-}
-.list li:hover {
-  width: 160px !important;
-  height: 60.5px !important;
-  display: inline-block;
-  color: #b81b22;
-  border-bottom: 1px solid rgba(225, 225, 225, 0.5) !important;
-}
-.list li:nth-child(1) {
-  margin-top: 26px;
+.navimg_right img {
+  width: 100%;
+  height: 100%;
 }
 </style>
