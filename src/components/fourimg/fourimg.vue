@@ -1,15 +1,17 @@
 <template>
   <div class="fourimg">
     <div class="four">
-      <div class="OURSERVICE">OUR SERVICE</div>
-      <div class="fourimg_title">我们的业务</div>
+      <div class="title">
+        <div class="redshu"></div>
+        <div class="fourimg_title">我们的业务</div>
+        <div class="OURSERVICE">OUR SERVICE</div>
+      </div>
     </div>
 
     <div class="imgcontent">
       <div class="imgitem" v-for="(item,index) in fourimg" :key="index">
         <!-- <router-link to="/business"> -->
         <div class="item" @click="xiang(item.id)">
-          <div class="itemtop">+</div>
           <img :src="item.image" alt />
         </div>
         <p>{{item.title}}</p>
@@ -108,110 +110,81 @@ export default {
 </script>
 <style scoped>
 .fourimg {
-  max-width: 1920px;
-  min-width: 1200px;
-  max-height: 45vw;
-  min-height: 548px;
-  height: 868px;
+  width: 10rem;
+  height: 10.36rem;
+  background-color: #ffffff;
   padding: 1px;
+  padding: 0px 0.4rem;
+  margin: 0.27rem auto;
   box-sizing: border-box;
-  margin: 100px auto;
 }
 .four {
-  margin: 100px;
-  opacity: 0;
-  transition: margin 0.8s, opacity 1s;
+  height: 1.21rem;
+  display: flex;
+  align-items: center;
+}
+.title {
+  display: flex;
+  align-items: flex-end;
+  height: 0.4rem;
+}
+.redshu {
+  width: 0.05rem;
+  height: 0.4rem;
+  background-color: #b81b22;
+  border-radius: 0.03rem;
+  margin-right: 0.13rem;
 }
 .OURSERVICE {
-  width: 243px;
-  height: 40px;
-  font-family: Impact;
-  font-size: 48px;
+  height: 0.21rem;
+  font-family: ArialMT;
+  font-size: 0.27rem;
   font-weight: normal;
   font-stretch: normal;
-  line-height: 40px;
-  letter-spacing: 0px;
-  color: #b81b22;
-  opacity: 0.2;
-  margin: 0 auto;
+  line-height: 0.21rem;
+  letter-spacing: 0rem;
+  color: #c1c1c1;
 }
 .fourimg_title {
-  width: 120px;
-  height: 24px;
-  font-family: MicrosoftYaHei-Bold;
-  font-size: 24px;
+  height: 0.39rem;
+  font-family: PingFang-SC-Bold;
+  font-size: 0.4rem;
   font-weight: normal;
   font-stretch: normal;
-  line-height: 24px;
-  letter-spacing: 0px;
-  color: #000000;
-  margin: -12px auto 0 auto;
+  line-height: 0.39rem;
+  letter-spacing: 0rem;
+  color: #222222;
+  margin-right: 0.17rem;
 }
 .imgcontent {
-  width: 91vw;
-  min-width: 1200px;
-  height: 30vw;
+  width: 100%;
+  height: 9.15rem;
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
-  margin: 3vw auto 0 auto;
 }
 .imgitem {
-  /* width: 21vw; */
-  min-width: 276px;
-  /* height: 28vw; */
-  min-height: 370px;
-  text-align: center;
+  width: 4.4rem;
+  height: 3.91rem;
+  margin-bottom: 0.67rem;
 }
 .item {
-  width: 21vw;
-  min-width: 276px;
-  height: 28vw;
-  min-height: 370px;
-  background-color: #b81b22;
-  position: relative;
-}
-.item:hover {
-  cursor: pointer;
-}
-
-.itemtop {
-  width: 21vw;
-  min-width: 276px;
-  height: 28vw;
-  min-height: 370px;
-  background: rgba(187, 24, 34, 0.5);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 100px;
-  color: #fff;
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  z-index: 999;
-  opacity: 0;
-  /* visibility: hidden; */
-  transition: visibility 1s;
-  -moz-transition: visibility 1s;
-  -webkit-transition: visibility 1s;
-  -o-transition: visibility 1s;
-}
-.itemtop:hover {
-  opacity: 1;
+  width: 4.4rem;
+  height: 3.31rem;
 }
 .item img {
-  width: 100%;
-  height: 27vw;
-  min-height: 358px;
+  width: 4.4rem;
+  height: 3.31rem;
 }
 .imgitem p {
-  font-family: MicrosoftYaHei;
-  font-size: 18px;
+  height: 0.33rem;
+  font-family: PingFang-SC-Medium;
+  font-size: 0.35rem;
   font-weight: normal;
   font-stretch: normal;
-  line-height: 24px;
-  letter-spacing: 0px;
+  line-height: 0.33rem;
+  letter-spacing: 0rem;
   color: #222222;
-  margin-top: 17px;
+  margin-top: 0.27rem;
 }
 </style>

@@ -25,4 +25,11 @@ export default {
   margin: 0px;
   padding: 0px;
 }
+ul {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+  color: #222222;
+}
 </style>

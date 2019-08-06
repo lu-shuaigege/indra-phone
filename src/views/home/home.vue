@@ -8,13 +8,19 @@
       </el-carousel-item>
     </el-carousel>
     <!-- 四图 -->
-    <!-- <Fourimg></Fourimg> -->
+    <Fourimg></Fourimg>
+    <!-- 关于英铎 -->
+    <Aboutindra></Aboutindra>
+    <!-- 成功案例 -->
+    <!-- <Success></Success> -->
     <!-- 合作方 -->
     <!-- <Cooperation></Cooperation> -->
   </div>
 </template>
 <script>
-
+import Fourimg from "@/components/fourimg/fourimg.vue";
+import Aboutindra from "@/components/aboutindra/aboutindra.vue";
+import Success from "@/components/success/success.vue";
 export default {
   data() {
     return {
@@ -22,8 +28,7 @@ export default {
       caseimg: []
     };
   },
-  components: {
-  },
+  components: { Fourimg, Aboutindra, Success },
   created() {
     this.banner();
     this.caseslist();
@@ -147,12 +152,7 @@ export default {
 };
 </script>
 <style scoped>
-.case {
-  width: 100%;
-  /* height: 1300px; */
-  /* height: 69vw; */
-  min-height: 960px;
-  padding: 1px;
-  box-sizing: border-box;
+.home {
+  background: #f8f8f8;
 }
 </style>

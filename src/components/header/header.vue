@@ -6,8 +6,60 @@
         <img src="../../assets/imgs/home/navlogo.png" alt />
       </div>
       <div class="navimg_right">
-        <img src="../../assets/imgs/home/index-menu.jpg" alt v-show="istrue==0" @click="close(1)" />
-        <img src="../../assets/imgs/home/close.png" alt v-show="istrue==1" @click="close(0)" />
+        <img
+          src="../../assets/imgs/home/index-menu.jpg"
+          alt
+          v-show="istrue==0"
+          @click="close(1)"
+          class="img1"
+        />
+        <img
+          src="../../assets/imgs/home/close.png"
+          alt
+          v-show="istrue==1"
+          @click="close(0)"
+          class="img2"
+        />
+      </div>
+    </div>
+    <div class="navlist" v-show="istrue==1">
+      <div class="list">
+          <router-link to="/home">
+            <div class="item" @click="close(0)">首页</div>
+          </router-link>
+          <router-link to="/about">
+            <div class="item" @click="close(0)">关于英铎</div>
+          </router-link>
+          <div class="item items">
+            <div class="yeitem" @click="list(1)">
+              <div class="ye">业务介绍</div>
+              <img src="../../assets/imgs/home/topimg.png" class="topimg" v-show="isshow==1" alt />
+            </div>
+            <div class="yelist" v-show="isshow==1">
+              <div class="itemlist" @click="close(0)">
+                <span class="reddian"></span>
+                <p class="listcontent">影视节目投资</p>
+              </div>
+              <div class="itemlist" @click="close(0)">
+                <span class="reddian"></span>
+                <p class="listcontent">短视频内容营销</p>
+              </div>
+              <div class="itemlist" @click="close(0)">
+                <span class="reddian"></span>
+                <p class="listcontent">华为移动媒体投放</p>
+              </div>
+              <div class="itemlist" @click="close(0)">
+                <span class="reddian"></span>
+                <p class="listcontent">交通出行媒体</p>
+              </div>
+            </div>
+          </div>
+          <router-link to="/success">
+            <div class="item" @click="close(0)">成功案例</div>
+          </router-link>
+          <router-link to="/contactus">
+            <div class="item" @click="close(0)">联系我们</div>
+          </router-link>
       </div>
     </div>
   </div>
@@ -22,7 +74,8 @@ export default {
       business_id: 0,
       business_list: [],
       active: 0,
-      istrue: 0
+      istrue: 0,
+      isshow: 0
     };
   },
   created() {
@@ -35,8 +88,13 @@ export default {
   },
   watch: {},
   methods: {
+    // 导航显示不显示
     close: function(x) {
       this.istrue = x;
+    },
+    // 列表下拉列表显示不显示
+    list: function(y) {
+      this.isshow = y;
     },
     xiang(row) {
       // 阻止浏览器的冒泡
@@ -99,12 +157,83 @@ export default {
   width: 100%;
   height: 100%;
 }
-.navimg_right {
+.navimg_right .img1 {
   width: 0.48rem;
   height: 0.33rem;
 }
-.navimg_right img {
+.navimg_right .img2 {
+  width: 0.45rem;
+  height: 0.45rem;
+}
+.navlist {
+  width: 10rem;
+  height: 18rem;
+  background-color: rgba(0, 0, 0, 0.3);
+  box-shadow: 0rem 0.03rem 0.03rem 0rem rgba(0, 0, 0, 0.5);
+  float: left;
+}
+.list {
+  width: 10rem;
+  padding: 0px 0.4rem;
+  box-sizing: border-box;
+  background: #ffffff;
+}
+.item {
+  /* height: 1.33rem; */
+  font-family: PingFang-SC-Medium;
+  font-size: 0.37rem;
+  font-weight: normal;
+  font-stretch: normal;
+  line-height: 1.33rem;
+  letter-spacing: 0rem;
+  color: #222222;
+  border-bottom: 1px solid #ebeef5;
+}
+.yeitem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 1.33rem;
+}
+.ye {
+  width: 1.55rem;
+  height: 0.35rem;
+  line-height: 0.35rem;
+}
+.topimg {
+  width: 0.45rem;
+  height: 0.25rem;
+}
+.yelist {
+  padding-left: 0.37rem;
+  margin-bottom: 0.51rem;
+}
+.items {
   width: 100%;
-  height: 100%;
+  /* height: 1.33rem; */
+}
+.itemlist {
+  height: 0.82rem;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+.reddian {
+  display: inline-block;
+  width: 0.19rem;
+  height: 0.19rem;
+  background-color: #b81b22;
+  border-radius: 0.05rem;
+  margin-right: 0.2rem;
+}
+.listcontent {
+  height: 0.33rem;
+  font-family: PingFang-SC-Medium;
+  font-size: 0.35rem;
+  font-weight: normal;
+  font-stretch: normal;
+  line-height: 0.33rem;
+  letter-spacing: 0rem;
+  color: #222222;
 }
 </style>

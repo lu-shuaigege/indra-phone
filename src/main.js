@@ -7,6 +7,7 @@ import 'element-ui/lib/theme-chalk/index.css'
 import Api from './api/index.js';
 Vue.prototype.$api = Api;
 
+import $ from 'jquery'
 Vue.use(ElementUI)
 Vue.config.productionTip = false
 
