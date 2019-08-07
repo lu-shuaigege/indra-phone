@@ -12,15 +12,49 @@
     <!-- 关于英铎 -->
     <Aboutindra></Aboutindra>
     <!-- 成功案例 -->
-    <!-- <Success></Success> -->
+    <div class="success">
+      <!-- 上面标题 -->
+      <div class="four">
+        <div class="title">
+          <div class="redshu"></div>
+          <div class="fourimg_title">成功案例</div>
+          <div class="OURSERVICE">SUCCESSFUL CASES</div>
+        </div>
+      </div>
+      <!-- 列表 -->
+      <div class="case">
+        <div class="casecontent">
+          <div class="imgcontent">
+            <div
+              class="imgitem"
+              v-for="(caseitem,caseindex) in caseimg"
+              :key="caseindex"
+              @click="details(caseitem.id)"
+            >
+              <div class="imgitemcontent">
+                <div class="img">
+                  <img :src="caseitem.cover_image" alt />
+                </div>
+
+                <p class="imgitemtitle">{{caseitem.title}}</p>
+                <span class="text">{{caseitem.classification}}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- <div class="yema">
+      <v-pagination :total="total" :current-page="current" @pagechange="pagechange"></v-pagination>
+      </div>-->
+    </div>
     <!-- 合作方 -->
-    <!-- <Cooperation></Cooperation> -->
+    <Cooperation></Cooperation>
   </div>
 </template>
 <script>
 import Fourimg from "@/components/fourimg/fourimg.vue";
 import Aboutindra from "@/components/aboutindra/aboutindra.vue";
-import Success from "@/components/success/success.vue";
+import Cooperation from "@/components/cooperation/cooperation.vue";
 export default {
   data() {
     return {
@@ -28,7 +62,7 @@ export default {
       caseimg: []
     };
   },
-  components: { Fourimg, Aboutindra, Success },
+  components: { Fourimg, Aboutindra, Cooperation },
   created() {
     this.banner();
     this.caseslist();
@@ -59,6 +93,7 @@ export default {
           if (response.status >= 200 && response.status < 300) {
             console.log(response.data); //请求成功，response为成功信息参数
             this.imgs = response.data.data;
+            console.log(this.imgs);
           } else {
             console.log(response.message); //请求失败，response为失败信息
           }
@@ -68,7 +103,7 @@ export default {
     //axios请求首页案例
     caseslist: function() {
       this.$api.get(
-        "cases-top?top=6",
+        "cases-top?top=4",
         {
           // category: this.category,
           // page: this.page
@@ -96,54 +131,6 @@ export default {
           // business_id: this.id
         }
       });
-    },
-    about: function() {
-      $(window).scroll(function() {
-        //判断元素到达当前窗口的什么位置（简介）
-        var isok = true;
-        let wordcontent = document.getElementsByClassName("wordcontent")[0]
-          .offsetTop;
-        let t = document.documentElement.scrollTop || document.body.scrollTop;
-        let h = document.documentElement.clientHeight;
-        let isshow = wordcontent - t - h;
-        if (isshow < -100 && isok) {
-          $(".wordcontent")
-            .css("margin-top", "0")
-            .css("opacity", "0.8");
-          isok = false;
-        }
-        //判断元素到达当前窗口的什么位置（简介）
-        let isup = true;
-        let titlediv = document.getElementsByClassName("titlediv")[0].offsetTop;
-        let istitledivshow = titlediv - t - h;
-        if (istitledivshow < -100 && isup) {
-          $(".titlediv")
-            .css("margin-top", "0")
-            .css("opacity", "1");
-          isup = false;
-        }
-        //判断元素到达当前窗口的什么位置（四图）
-        let isfour = true;
-        let four = document.getElementsByClassName("four")[0].offsetTop;
-        let fourimg = four - t - h;
-        if (fourimg < -100 && isok) {
-          $(".four")
-            .css("margin-top", "0")
-            .css("opacity", "1");
-          isfour = false;
-        }
-        //判断元素到达当前窗口的什么位置（合作伙伴）
-        let isand = true;
-        let andtitle = document.getElementsByClassName("andtitle")[0].offsetTop;
-        let and = andtitle - t - h;
-        console.log(fourimg);
-        if (and < -100 && isand) {
-          $(".andtitle")
-            .css("margin-top", "0")
-            .css("opacity", "1");
-          isand = false;
-        }
-      });
     }
   },
   beforeDestroy() {
@@ -154,5 +141,122 @@ export default {
 <style scoped>
 .home {
   background: #f8f8f8;
+}
+.success {
+  width: 100%;
+  background-color: #ffffff;
+  padding: 1px;
+  padding: 0px 0.4rem;
+  margin: 0.27rem auto;
+  box-sizing: border-box;
+}
+.four {
+  height: 1.21rem;
+  display: flex;
+  align-items: center;
+}
+.title {
+  display: flex;
+  align-items: flex-end;
+  height: 0.4rem;
+}
+.redshu {
+  width: 0.05rem;
+  height: 0.4rem;
+  background-color: #b81b22;
+  border-radius: 0.03rem;
+  margin-right: 0.13rem;
+}
+.OURSERVICE {
+  height: 0.21rem;
+  font-family: ArialMT;
+  font-size: 0.27rem;
+  font-weight: normal;
+  font-stretch: normal;
+  line-height: 0.21rem;
+  letter-spacing: 0rem;
+  color: #c1c1c1;
+}
+.fourimg_title {
+  height: 0.39rem;
+  font-family: PingFang-SC-Bold;
+  font-size: 0.4rem;
+  font-weight: normal;
+  font-stretch: normal;
+  line-height: 0.39rem;
+  letter-spacing: 0rem;
+  color: #222222;
+  margin-right: 0.17rem;
+}
+.case {
+  width: 100%;
+  padding: 1px;
+  box-sizing: border-box;
+}
+.casecontent {
+  width: 100%;
+  margin: 0 auto;
+}
+.imgcontent {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.imgitem {
+  width: 4.4rem;
+  height: 4.76rem;
+  background-color: #ffffff;
+  box-sizing: border-box;
+  margin-bottom: 0.67rem;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+}
+.img {
+  width: 100%;
+  height: 3.31rem;
+  overflow: hidden;
+}
+.img img {
+  width: 100%;
+  height: 100%;
+}
+.imgitemtitle {
+  width: 4.4rem;
+  height: 0.33rem;
+  font-family: PingFang-SC-Medium;
+  font-size: 0.35rem;
+  font-weight: normal;
+  font-stretch: normal;
+  line-height: 0.33rem;
+  letter-spacing: 0rem;
+  color: #222222;
+  padding: 0.27rem 0 0 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+}
+.imgitem .text {
+  display: inline-block;
+  height: 0.64rem;
+  background-color: #f1f1f1;
+  border-radius: 0.11rem;
+  font-family: PingFang-SC-Medium;
+  font-size: 0.29rem;
+  font-weight: normal;
+  font-stretch: normal;
+  line-height: 0.28rem;
+  letter-spacing: 0rem;
+  color: #999999;
+  margin: 0.21rem 0 0 0;
+  padding: 0.19rem;
+  box-sizing: border-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
 }
 </style>

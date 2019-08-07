@@ -10,119 +10,68 @@
     <Aboutindra></Aboutindra>
     <!-- 专业团队 -->
     <div class="major">
-      <p class="titlebg">PROFESIONAL TEAM</p>
-      <p class="tiele">专业团队</p>
-      <div class="majortop">
-        <div class="majortop_left">
-          <img class="leftpeople" src="../../assets/imgs/about/people4.png" alt />
-          <div class="majortop_content_left">
-            <p class="namep">
-              <span class="name">周伟强</span>
-              <span class="ying">Jeremiah Lee</span>
-            </p>
-            <p class="job">新联在线创始人、董事长</p>
-            <div class="content">
-              <p class="top_yin">“</p>
-              <p
-                class="word"
-              >周伟强，新加坡籍华人。2009年毕业于新加坡南洋理工大学金融会计系，并取得学士学位。后回国于2010年参加广东省中小企业局与华南理工大学管理学院联合举办的担保行业总裁，自费EMBA研修全部展示完。</p>
-              <p class="bottom_yin">”</p>
-            </div>
-          </div>
-        </div>
-        <div class="majortop_right">
-          <img class="rightpeople" src="../../assets/imgs/about/people2.png" alt />
-          <div class="majortop_content_right">
-            <p class="namep">
-              <span class="name">李国兴</span>
-              <span class="ying">Jon Zhou</span>
-            </p>
-            <p class="job">新联在线创始人、国际区域董事长</p>
-            <div class="content">
-              <p class="top_yin">“</p>
-              <p
-                class="word"
-              >李国兴，新加坡人，英国高等教育学院——赫瑞瓦特大学，获颁金融管理专业、地产与物理管理专业双学位。曾任职新加坡武装部队战备军官、跨国企业融资与上市顾问，2010年联通周伟强在新加坡创办全部展示完</p>
-              <p class="bottom_yin">”</p>
-            </div>
-          </div>
+      <!-- 上面标题 -->
+      <div class="four">
+        <div class="title">
+          <div class="redshu"></div>
+          <div class="fourimg_title">专业团队</div>
+          <div class="OURSERVICE">PROFESSIONAL TEAM</div>
         </div>
       </div>
+
+      <div class="majortop_left">
+        <img class="leftpeople" src="../../assets/imgs/about/people4.png" alt />
+        <div class="majortop_content_left">
+          <p class="namep">
+            <span class="name">周伟强</span>
+            <span class="ying">Jeremiah Lee</span>
+          </p>
+          <p class="job">新联在线创始人、董事长</p>
+          <p
+            class="word"
+          >周伟强，新加坡籍华人。2009年毕业于新加坡南洋理工大学金融会计系，并取得学士学位。后回国于2010年参加广东省中小企业局与华南理工大学管理学院联合举办的担保行业总裁，自费EMBA研修全部展示完。</p>
+        </div>
+      </div>
+      <div class="majortop_right">
+        <div class="majortop_content_right">
+          <p class="namep">
+            <span class="name">李国兴</span>
+            <span class="ying">Jon Zhou</span>
+          </p>
+          <p class="job">新联在线创始人、国际区域董事长</p>
+          <p
+            class="word"
+          >李国兴，新加坡人，英国高等教育学院——赫瑞瓦特大学，获颁金融管理专业、地产与物理管理专业双学位。曾任职新加坡武装部队战备军官、跨国企业融资与上市顾问，2010年联通周伟强在新加坡创办全部展示完</p>
+        </div>
+        <img class="leftpeople" src="../../assets/imgs/about/people2.png" alt />
+      </div>
       <div class="majorbottom">
-        <div class="majorbottom_content">
-          <div class="left">
-            <p class="left_title">新联在线 — 国内</p>
-            <div class="left_title_con">
-              <div class="item item1">
-                <div>
-                  <p
-                    class="img_p"
-                  >李国兴，新加坡人，英国高等教育学院——赫瑞瓦特大学，获颁金融管理专业、地产与物理管理专业双学位。曾任职新加坡武装部队战备军官、跨国企业融资与上市顾问，2010年联通周伟强在新加坡创办全部展示完</p>
-                </div>
-                <p class="item_p1">
-                  <span class="item_p_sp1">许士明</span>
-                  <span class="item_p_sp2">Aivon Hui</span>
-                </p>
-                <p class="item_p2">
-                  <span class="item_p_sp3">联合创始人、总经理</span>
-                </p>
-              </div>
-              <div class="item item2">
-                <div>
-                  <p
-                    class="img_p"
-                  >李国兴，新加坡人，英国高等教育学院——赫瑞瓦特大学，获颁金融管理专业、地产与物理管理专业双学位。曾任职新加坡武装部队战备军官、跨国企业融资与上市顾问，2010年联通周伟强在新加坡创办全部展示完</p>
-                </div>
-                <p class="item_p">
-                  <span class="item_p_sp1">江小东</span>
-                  <span class="item_p_sp2">AJ Kong</span>
-                </p>
-                <p class="item_p2">
-                  <span class="item_p_sp3">副总经理</span>
-                </p>
-              </div>
-            </div>
+        <div class="item" v-for="(item,index) in content" :key="index">
+          <div class="four_img">
+            <img :src="item.url" alt />
           </div>
-          <div class="right">
-            <p class="left_title">新联在线 — 新加坡</p>
-            <div class="left_title_con">
-              <div class="item item3">
-                <div>
-                  <p
-                    class="img_p"
-                  >李国兴，新加坡人，英国高等教育学院——赫瑞瓦特大学，获颁金融管理专业、地产与物理管理专业双学位。曾任职新加坡武装部队战备军官、跨国企业融资与上市顾问，2010年联通周伟强在新加坡创办全部展示完</p>
-                </div>
-                <p class="item_p1">
-                  <span class="item_p_sp1">Eddie Lee</span>
-                  <!-- <span class="item_p_sp2">Aivon Hui</span> -->
-                </p>
-                <p class="item_p2">
-                  <span class="item_p_sp3">Eddie Lee</span>
-                </p>
-              </div>
-              <div class="item item4">
-                <div>
-                  <p
-                    class="img_p"
-                  >李国兴，新加坡人，英国高等教育学院——赫瑞瓦特大学，获颁金融管理专业、地产与物理管理专业双学位。曾任职新加坡武装部队战备军官、跨国企业融资与上市顾问，2010年联通周伟强在新加坡创办全部展示完</p>
-                </div>
-                <p class="item_p">
-                  <span class="item_p_sp1">Eddie Lee</span>
-                  <!-- <span class="item_p_sp2">AJ Kong</span> -->
-                </p>
-                <p class="item_p2">
-                  <span class="item_p_sp3">Eddie Lee</span>
-                </p>
-              </div>
-            </div>
+
+          <div class="item_bottom">
+            <p class="namep">
+              <span class="name">{{item.name}}</span>
+              <span class="ying">{{item.ying}}</span>
+            </p>
+            <p class="job">{{item.job}}</p>
+            <p class="itemword">{{item.itemword}}</p>
           </div>
         </div>
       </div>
     </div>
     <!-- 公司发展 -->
-    <div class="major">
-      <p class="titlebg">THE DEVELOPMENT</p>
-      <p class="tiele">公司发展</p>
+    <div class="major_bottom">
+      <!-- 上面标题 -->
+      <div class="four">
+        <div class="title">
+          <div class="redshu"></div>
+          <div class="fourimg_title">公司发展</div>
+          <div class="OURSERVICE">THE DEVELOPMENT</div>
+        </div>
+      </div>
       <div class="bigimg">
         <div>
           <img :src="imgs" alt />
@@ -134,11 +83,46 @@
 <script>
 import Aboutindra from "@/components/aboutindra/aboutindra.vue";
 import Topbg from "@/components/topbg/topbg.vue";
+import { request } from "http";
 export default {
   data() {
     return {
       imgs: "",
-      bgimg: ""
+      bgimg: "",
+      content: [
+        {
+          url: require("../../assets/imgs/about/people.png"),
+          name: "许士明",
+          ying: "Jon Zhou",
+          job: "联合创始人、总经理",
+          itemword:
+            "许士明，新加坡籍华人。2009年毕业于新加坡南洋理工大学金融会计系，并取得学士学位。最多5行."
+        },
+        {
+          url: require("../../assets/imgs/about/people.png"),
+          name: "许士明",
+          ying: "Jon Zhou",
+          job: "联合创始人、总经理",
+          itemword:
+            "许士明，新加坡籍华人。2009年毕业于新加坡南洋理工大学金融会计系，并取得学士学位。最多5行."
+        },
+        {
+          url: require("../../assets/imgs/about/people.png"),
+          name: "许士明",
+          ying: "Jon Zhou",
+          job: "联合创始人、总经理",
+          itemword:
+            "许士明，新加坡籍华人。2009年毕业于新加坡南洋理工大学金融会计系，并取得学士学位。最多5行."
+        },
+        {
+          url: require("../../assets/imgs/about/people.png"),
+          name: "许士明",
+          ying: "Jon Zhou",
+          job: "联合创始人、总经理",
+          itemword:
+            "许士明，新加坡籍华人。2009年毕业于新加坡南洋理工大学金融会计系，并取得学士学位。最多5行."
+        }
+      ]
     };
   },
   components: {
@@ -231,300 +215,204 @@ export default {
 <style scoped>
 .about {
   width: 100%;
+  background: #f8f8f8;
 }
 .top {
-  width: 100%;
-  /* height: 700px; */
+  width: 10rem;
+  height: 100%;
+  /* height: 4.55rem; */
 }
 .top img {
   width: 100%;
-  margin-bottom: 100px;
-  /* max-height: 600px; */
 }
-.major {
-  width: 100%;
-  padding-top: 100px;
-}
-.titlebg {
-  width: 360px;
-  height: 40px;
-  font-family: Impact;
-  font-size: 48px;
-  font-weight: normal;
-  font-stretch: normal;
-  line-height: 40px;
-  letter-spacing: 0px;
-  color: #b81b22;
-  opacity: 0.2;
-  margin: 0 auto;
-}
-.tiele {
-  width: 98px;
-  height: 24px;
-  font-family: MicrosoftYaHei-Bold;
-  font-size: 24px;
-  font-weight: normal;
-  font-stretch: normal;
-  line-height: 24px;
-  letter-spacing: 0px;
-  color: #222222;
-  margin: -12px auto 0 auto;
-}
-.majortop {
-  width: 91.15vw;
-  min-width: 1200px;
-  margin: 50px auto;
+/* 每栏标题 */
+.four {
+  height: 1.21rem;
   display: flex;
-  justify-content: space-between;
+  align-items: center;
 }
-.majortop_left {
-  width: 44.27vw;
-  height: 418px;
-  /* background-color: #f8f8f8; */
+.title {
+  display: flex;
+  align-items: flex-end;
+  height: 0.4rem;
 }
-.leftpeople {
-  float: left;
+.redshu {
+  width: 0.05rem;
+  height: 0.4rem;
+  background-color: #b81b22;
+  border-radius: 0.03rem;
+  margin-right: 0.13rem;
 }
-.majortop_content_left {
-  width: 44.27vw;
-  min-width: 590px;
-  height: 350px;
-  background-color: #f8f8f8;
-  margin-top: 68px;
-  padding-left: 14.53vw;
-  padding-top: 1px;
+.OURSERVICE {
+  height: 0.21rem;
+  font-family: ArialMT;
+  font-size: 0.27rem;
+  font-weight: normal;
+  font-stretch: normal;
+  line-height: 0.21rem;
+  letter-spacing: 0rem;
+  color: #c1c1c1;
+}
+.fourimg_title {
+  height: 0.39rem;
+  font-family: PingFang-SC-Bold;
+  font-size: 0.4rem;
+  font-weight: normal;
+  font-stretch: normal;
+  line-height: 0.39rem;
+  letter-spacing: 0rem;
+  color: #222222;
+  margin-right: 0.17rem;
+}
+/* 简介两个 */
+.major {
+  width: 10rem;
+  height: 20.41rem;
+  background-color: #ffffff;
+  padding: 1px;
+  padding: 0px 0.4rem;
+  margin: 0.27rem auto;
   box-sizing: border-box;
 }
-.namep {
-  margin-top: 32px;
+.majortop_left {
+  width: 9.2rem;
+  height: 6rem;
+  background-color: #f8f8f8;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0.41rem auto;
+  padding-top: 0.48rem;
+  box-sizing: border-box;
+}
+.leftpeople {
+  width: 2.89rem;
+  height: 5.57rem;
+  align-self: flex-end;
+}
+.majortop_content_left {
+  width: 4.91rem;
+  height: 4.95rem;
+  margin-right: 0.51rem;
 }
 .name {
-  width: 73px;
-  height: 24px;
-  font-family: MicrosoftYaHei-Bold;
-  font-size: 24px;
+  height: 0.36rem;
+  font-family: PingFang-SC-Bold;
+  font-size: 0.37rem;
   font-weight: normal;
   font-stretch: normal;
-  line-height: 24px;
-  letter-spacing: 0px;
+  line-height: 0.36rem;
+  letter-spacing: 0rem;
   color: #222222;
+  margin-right: 0.11rem;
 }
 .ying {
-  width: 62px;
-  height: 12px;
-  font-family: MicrosoftYaHei;
-  font-size: 14px;
+  height: 0.23rem;
+  font-family: PingFang-SC-Regular;
+  font-size: 0.29rem;
   font-weight: normal;
   font-stretch: normal;
-  line-height: 12px;
-  letter-spacing: 0px;
+  line-height: 0.23rem;
+  letter-spacing: 0rem;
   color: #999999;
 }
 .job {
-  /* width: 240px; */
-  height: 17px;
-  font-family: MicrosoftYaHei;
-  font-size: 16px;
+  height: 0.31rem;
+  font-family: PingFang-SC-Medium;
+  font-size: 0.32rem;
   font-weight: normal;
   font-stretch: normal;
-  line-height: 17px;
-  letter-spacing: 0px;
-  color: #666666;
-}
-.content {
-  width: 28.39vw;
-  min-width: 4px;
-  height: 184px;
-  margin-top: 1.56vw;
-}
-.top_yin {
-  height: 19px;
-  font-family: Impact;
-  font-size: 72px;
-  font-weight: normal;
-  font-stretch: normal;
-  line-height: 58px;
-  letter-spacing: 0px;
-  color: #c1c1c1;
-}
-.bottom_yin {
-  width: 23px;
-  height: 19px;
-  font-family: Impact;
-  font-size: 72px;
-  font-weight: normal;
-  font-stretch: normal;
-  line-height: 58px;
-  letter-spacing: 0px;
-  color: #c1c1c1;
-  float: right;
-  overflow: hidden;
+  line-height: 0.31rem;
+  letter-spacing: 0rem;
+  color: #999999;
+  margin: 0.21rem 0 0.4rem 0;
 }
 .word {
-  width: 23.59vw;
-  min-width: 285px;
-  font-family: MicrosoftYaHei;
-  font-size: 16px;
+  width: 100%;
+  height: 3.67rem;
+  font-family: PingFang-SC-Medium;
+  font-size: 0.32rem;
   font-weight: normal;
   font-stretch: normal;
-  line-height: 30px;
-  letter-spacing: 0px;
-  color: #222222;
-  margin: 20px auto;
+  line-height: 0.48rem;
+  letter-spacing: 0rem;
+  color: #666666;
+  text-align: left;
 }
 .majortop_right {
-  width: 44.27vw;
-  min-width: 590px;
-  height: 418px;
+  width: 9.2rem;
+  height: 6rem;
+  background-color: #f8f8f8;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 .rightpeople {
   float: right;
 }
 .majortop_content_right {
-  width: 44.27vw;
-  height: 350px;
-  background-color: #f8f8f8;
-  margin-top: 68px;
-  padding-right: 14.53vw;
-  padding-left: 31px;
-  padding-top: 1px;
-  box-sizing: border-box;
+  width: 4.91rem;
+  height: 4.95rem;
+  margin-left: 0.51rem;
 }
+/* 简介四个 */
 .majorbottom {
-  width: 91.15vw;
-  min-width: 1200px;
-  height: 540px;
-  background-color: #f8f8f8;
-  margin: 0 auto;
-  padding: 46px 0;
+  width: 100%;
+  height: 5.73rem;
+  margin: 0.4rem auto;
   box-sizing: border-box;
   display: flex;
   justify-content: space-between;
-}
-.majorbottom_content {
-  width: 1200px;
-  height: 100%;
-  margin: 0 auto;
-  display: flex;
-  justify-content: space-between;
-}
-.left {
-  width: 540px;
-  height: 100%;
-}
-.left_title {
-  width: 140px;
-  height: 18px;
-  font-family: MicrosoftYaHei;
-  font-size: 18px;
-  font-weight: normal;
-  font-stretch: normal;
-  line-height: 18px;
-  letter-spacing: 0px;
-  color: #222222;
-  margin-bottom: 30px;
-}
-.left_title_con {
-  display: flex;
-  justify-content: space-between;
+  overflow: scroll;
 }
 .item {
-  width: 250px;
-  height: 397px;
+  width: 4rem;
+  height: 5.73rem;
+  background-color: #f8f8f8;
+  margin-right: 0.4rem;
+  padding: 0.27rem;
+  box-sizing: border-box;
+  text-align: center;
 }
-.item1 div {
-  width: 250px;
-  height: 334px;
-  background: url("../../assets/imgs/about/people3.jpg");
-  margin-bottom: 21px;
+.four_img {
+  width: 1.33rem;
+  height: 1.33rem;
+  border-radius: 50%;
+  margin: 0 auto 0.2rem auto;
 }
-.item2 div {
-  width: 250px;
-  height: 334px;
-  background: url("../../assets/imgs/about/people1.jpg");
-  margin-bottom: 21px;
-}
-.item div:hover .img_p {
-  display: inline-block;
-}
-.img_p {
-  display: none;
-  width: 199px;
-  height: 159px;
-  font-family: MicrosoftYaHei;
-  font-size: 14px;
-  font-weight: normal;
-  font-stretch: normal;
-  line-height: 24px;
-  letter-spacing: 0px;
-  color: #ffffff;
-  padding: 86px 25px;
-  background-color: #000000;
-  opacity: 0.6;
-}
-.item_p_sp1 {
-  width: 48px;
-  height: 17px;
-  font-family: MicrosoftYaHei;
-  font-size: 16px;
-  font-weight: normal;
-  font-stretch: normal;
-  line-height: 17px;
-  letter-spacing: 0px;
-  color: #222222;
-}
-.item_p_sp2 {
-  width: 66px;
-  height: 12px;
-  font-family: MicrosoftYaHei;
-  font-size: 14px;
-  font-weight: normal;
-  font-stretch: normal;
-  line-height: 12px;
-  letter-spacing: 0px;
-  color: #999999;
-}
-.item_p_sp3 {
-  width: 127px;
-  height: 15px;
-  font-family: MicrosoftYaHei;
-  font-size: 14px;
-  font-weight: normal;
-  font-stretch: normal;
-  line-height: 15px;
-  letter-spacing: 0px;
-  color: #666666;
-}
-.right {
-  width: 540px;
+.four_img img {
+  width: 100%;
   height: 100%;
 }
-.item3 div {
-  width: 250px;
-  height: 334px;
-  background: url("../../assets/imgs/about/Eddie.jpg");
-  margin-bottom: 21px;
+.itemword {
+  width: 3.37rem;
+  height: 2.23rem;
+  font-family: PingFang-SC-Medium;
+  font-size: 0.32rem;
+  font-weight: normal;
+  font-stretch: normal;
+  line-height: 0.48rem;
+  letter-spacing: 0rem;
+  color: #666666;
+  text-align: left;
 }
-.item4 div {
-  width: 250px;
-  height: 334px;
-  background: url("../../assets/imgs/about/Poh.jpg");
-  margin-bottom: 21px;
+.major_bottom {
+  width: 10rem;
+  background-color: #ffffff;
+  margin: 0.4rem auto;
+  padding: 1px;
+  padding: 0px 0.4rem;
+  margin: 0.27rem auto;
+  box-sizing: border-box;
 }
 .bigimg {
-  width: 91.15vw;
-  min-width: 1200px;
-  /* background: #f8f8f8; */
-  margin: 50px auto;
+  width: 100%;
 }
 .bigimg div {
-  width: 1200px;
+  width: 100%;
   margin: 0 auto;
 }
 .bigimg div img {
   width: 100%;
-  max-width: 100%;
-  height: 100%;
-  max-height: 100%;
 }
 </style>

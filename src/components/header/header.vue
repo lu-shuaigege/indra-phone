@@ -17,49 +17,49 @@
           src="../../assets/imgs/home/close.png"
           alt
           v-show="istrue==1"
-          @click="close(0)"
+          @click="closeup(0)"
           class="img2"
         />
       </div>
     </div>
     <div class="navlist" v-show="istrue==1">
       <div class="list">
-          <router-link to="/home">
-            <div class="item" @click="close(0)">首页</div>
-          </router-link>
-          <router-link to="/about">
-            <div class="item" @click="close(0)">关于英铎</div>
-          </router-link>
-          <div class="item items">
-            <div class="yeitem" @click="list(1)">
-              <div class="ye">业务介绍</div>
-              <img src="../../assets/imgs/home/topimg.png" class="topimg" v-show="isshow==1" alt />
+        <router-link to="/home">
+          <div class="item" @click="closeup(0)">首页</div>
+        </router-link>
+        <router-link to="/about">
+          <div class="item" @click="closeup(0)">关于英铎</div>
+        </router-link>
+        <div class="item items">
+          <div class="yeitem" @click="list(1)">
+            <div class="ye">业务介绍</div>
+            <img src="../../assets/imgs/home/topimg.png" class="topimg" v-show="isshow==1" alt />
+          </div>
+          <div class="yelist" v-show="isshow==1">
+            <div class="itemlist" @click="closeup(0)">
+              <span class="reddian"></span>
+              <p class="listcontent">影视节目投资</p>
             </div>
-            <div class="yelist" v-show="isshow==1">
-              <div class="itemlist" @click="close(0)">
-                <span class="reddian"></span>
-                <p class="listcontent">影视节目投资</p>
-              </div>
-              <div class="itemlist" @click="close(0)">
-                <span class="reddian"></span>
-                <p class="listcontent">短视频内容营销</p>
-              </div>
-              <div class="itemlist" @click="close(0)">
-                <span class="reddian"></span>
-                <p class="listcontent">华为移动媒体投放</p>
-              </div>
-              <div class="itemlist" @click="close(0)">
-                <span class="reddian"></span>
-                <p class="listcontent">交通出行媒体</p>
-              </div>
+            <div class="itemlist" @click="closeup(0)">
+              <span class="reddian"></span>
+              <p class="listcontent">短视频内容营销</p>
+            </div>
+            <div class="itemlist" @click="closeup(0)">
+              <span class="reddian"></span>
+              <p class="listcontent">华为移动媒体投放</p>
+            </div>
+            <div class="itemlist" @click="closeup(0)">
+              <span class="reddian"></span>
+              <p class="listcontent">交通出行媒体</p>
             </div>
           </div>
-          <router-link to="/success">
-            <div class="item" @click="close(0)">成功案例</div>
-          </router-link>
-          <router-link to="/contactus">
-            <div class="item" @click="close(0)">联系我们</div>
-          </router-link>
+        </div>
+        <router-link to="/success">
+          <div class="item" @click="closeup(0)">成功案例</div>
+        </router-link>
+        <router-link to="/contactus">
+          <div class="item" @click="closeup(0)">联系我们</div>
+        </router-link>
       </div>
     </div>
   </div>
@@ -91,6 +91,15 @@ export default {
     // 导航显示不显示
     close: function(x) {
       this.istrue = x;
+
+      $("#app")
+        .css("height", "17.7rem")
+        .css("overflow", "hidden");
+    },
+    closeup: function(x) {
+      this.istrue = x;
+      this.isshow = x;
+      $("#app").css("height", "");
     },
     // 列表下拉列表显示不显示
     list: function(y) {
@@ -140,6 +149,7 @@ export default {
   height: 1.33rem;
   background-color: #ffffff;
   box-shadow: inset 0rem -0.01rem 0rem 0rem rgba(0, 0, 0, 0.1);
+  margin: 0px auto;
 }
 .navcontent {
   width: 9.2rem;
@@ -167,10 +177,11 @@ export default {
 }
 .navlist {
   width: 10rem;
-  height: 18rem;
+  height: 16.4rem;
   background-color: rgba(0, 0, 0, 0.3);
   box-shadow: 0rem 0.03rem 0.03rem 0rem rgba(0, 0, 0, 0.5);
-  float: left;
+  position: absolute;
+  z-index: 99;
 }
 .list {
   width: 10rem;

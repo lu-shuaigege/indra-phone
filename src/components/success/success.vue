@@ -25,7 +25,7 @@
               </div>
 
               <p class="imgitemtitle">{{caseitem.title}}</p>
-              <p class="text">{{caseitem.classification}}</p>
+              <span class="text">{{caseitem.classification}}</span>
             </div>
           </div>
         </div>
@@ -108,11 +108,11 @@ export default {
     //axios请求
     caseslist: function() {
       this.$api.get(
-        "cases",
+        "cases-top?top=4",
         {
           // category: this.category,
-          page: this.page,
-          per_page: 12
+          // page: this.page,
+          // per_page: 4
         },
         response => {
           if (response.status >= 200 && response.status < 300) {
@@ -120,7 +120,7 @@ export default {
             this.imglist = response.data.data.data;
             this.total = response.data.data.total;
             this.display = response.data.per_page;
-            console.log(this.imglist);
+            console.log(this.total);
           } else {
             console.log(response.message); //请求失败，response为失败信息
           }
@@ -151,6 +151,11 @@ export default {
 <style scoped>
 .success {
   width: 100%;
+  background-color: #ffffff;
+  padding: 1px;
+  padding: 0px 0.4rem;
+  margin: 0.27rem auto;
+  box-sizing: border-box;
 }
 .four {
   height: 1.21rem;
@@ -192,87 +197,48 @@ export default {
 }
 .case {
   width: 100%;
-  /* height: 1300px; */
-  /* height: 69vw; */
-  min-height: 960px;
   padding: 1px;
   box-sizing: border-box;
 }
 .casecontent {
   width: 100%;
-  /* height: 1145px; */
   margin: 0 auto;
 }
 .imgcontent {
-  /* width: 92vw; */
-  /* max-width: 1750px; */
-  /* min-width: 1200px; */
-  margin: 50px auto 0 auto;
   display: flex;
   flex-wrap: wrap;
-  justify-content: flex-start;
+  justify-content: space-between;
 }
 .imgitem {
-  width: 33.3%;
-  min-width: 355px;
-  height: 28vw;
-  min-height: 345px;
+  width: 4.4rem;
+  height: 4.76rem;
   background-color: #ffffff;
   box-sizing: border-box;
-  margin-bottom: 50px;
+  margin-bottom: 0.67rem;
   overflow: hidden;
-  /* flex: 33.3%; */
   display: flex;
   justify-content: center;
-  padding: 0px 2vw;
-}
-.imgitemcontent {
-  /* width: 100%; */
-  /* background: #d8362b; */
-}
-.imgitem:hover .imgitemcontent {
-  box-shadow: 0vw 0vw 1vw 0vw rgba(51, 51, 51, 0.15);
-  border-bottom: 2px solid #d8362b;
-  background: #d8362b;
-  /* animation-duration: 2s;
-  animation-delay: 2s;
-  animation-iteration-count: infinite; */
-}
-.imgitem:hover p {
-  color: #ffffff;
-}
-.imgitem:hover img {
-  transition: all 0.5s;
-  -webkit-transition: all 0.5s; /* Safari */
-  cursor: pointer;
-  transform: scale(1.1);
-  -ms-transform: scale(1.1); /* IE 9 */
-  -moz-transform: scale(1.1); /* Firefox */
-  -webkit-transform: scale(1.1); /* Safari 和 Chrome */
-  -o-transform: scale(1.1);
 }
 .img {
   width: 100%;
-  min-width: 355px;
-  height: 22vw;
-  min-height: 269px;
+  height: 3.31rem;
   overflow: hidden;
 }
 .img img {
   width: 100%;
   height: 100%;
 }
-.imgitem .imgitemtitle {
-  /* width: 100%; */
-  height: 21px;
-  font-family: MicrosoftYaHei;
-  font-size: 1vw;
+.imgitemtitle {
+  width: 4.4rem;
+  height: 0.33rem;
+  font-family: PingFang-SC-Medium;
+  font-size: 0.35rem;
   font-weight: normal;
   font-stretch: normal;
-  line-height: 21px;
-  letter-spacing: 0px;
+  line-height: 0.33rem;
+  letter-spacing: 0rem;
   color: #222222;
-  padding: 1.2vw 1vw 0 1vw;
+  padding: 0.27rem 0 0 0;
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
@@ -280,15 +246,20 @@ export default {
   -webkit-line-clamp: 1;
 }
 .imgitem .text {
-  height: 15px;
-  font-family: MicrosoftYaHei;
-  font-size: 14px;
+  display: inline-block;
+  height: 0.64rem;
+  background-color: #f1f1f1;
+  border-radius: 0.11rem;
+  font-family: PingFang-SC-Medium;
+  font-size: 0.29rem;
   font-weight: normal;
   font-stretch: normal;
-  line-height: 15px;
-  letter-spacing: 0px;
+  line-height: 0.28rem;
+  letter-spacing: 0rem;
   color: #999999;
-  padding: 0.5vw 1vw 0 1vw;
+  margin: 0.21rem 0 0 0;
+  padding: 0.19rem;
+  box-sizing: border-box;
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;

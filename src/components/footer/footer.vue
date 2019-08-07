@@ -22,6 +22,7 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin: 0px auto;
 }
 .text {
   height: 0.35rem;

@@ -1,12 +1,15 @@
 <template>
   <!-- 首页 -->
   <div class="and">
-    <div class="andcontent">
-      <div class="andtitle">
-        <p class="titlebg">BUSINESS PARTNER</p>
-        <p class="title">合作伙伴</p>
+    <!-- 上面标题 -->
+    <div class="four">
+      <div class="title">
+        <div class="redshu"></div>
+        <div class="fourimg_title">合作伙伴</div>
+        <div class="OURSERVICE">BUSINESS PARTNER</div>
       </div>
-
+    </div>
+    <div class="andcontent">
       <div class="imgcontent">
         <div class="imgitem" v-for="(item,index) in imgs" :key="index">
           <!-- <div class="item"> -->
@@ -73,59 +76,66 @@ export default {
 </script>
 <style scoped>
 .and {
-  width: 100%;
+  width: 10rem;
+  height: 3.85rem;
+  background-color: #ffffff;
   padding: 1px;
+  padding: 0px 0.4rem;
+  margin: 0.27rem auto;
   box-sizing: border-box;
 }
-.andcontent {
-  width: 1200px;
-  padding: 100px 0;
-  margin: 0px auto;
-}
-.andtitle {
-  margin-top: 100px;
-  opacity: 0;
-  transition: margin 0.8s, opacity 1s;
-}
-.titlebg {
-  width: 364px;
-  height: 40px;
-  font-family: Impact;
-  font-size: 48px;
-  font-weight: normal;
-  font-stretch: normal;
-  line-height: 40px;
-  letter-spacing: 0px;
-  color: #b81b22;
-  opacity: 0.2;
-  margin: 0 auto;
+.four {
+  height: 1.21rem;
+  display: flex;
+  align-items: center;
 }
 .title {
-  width: 98px;
-  height: 24px;
-  font-family: MicrosoftYaHei-Bold;
-  font-size: 24px;
+  display: flex;
+  align-items: flex-end;
+  height: 0.4rem;
+}
+.redshu {
+  width: 0.05rem;
+  height: 0.4rem;
+  background-color: #b81b22;
+  border-radius: 0.03rem;
+  margin-right: 0.13rem;
+}
+.OURSERVICE {
+  height: 0.21rem;
+  font-family: ArialMT;
+  font-size: 0.27rem;
   font-weight: normal;
   font-stretch: normal;
-  line-height: 24px;
-  letter-spacing: 0px;
-  color: #000000;
-  margin: -12px auto 0 auto;
+  line-height: 0.21rem;
+  letter-spacing: 0rem;
+  color: #c1c1c1;
+}
+.fourimg_title {
+  height: 0.39rem;
+  font-family: PingFang-SC-Bold;
+  font-size: 0.4rem;
+  font-weight: normal;
+  font-stretch: normal;
+  line-height: 0.39rem;
+  letter-spacing: 0rem;
+  color: #222222;
+  margin-right: 0.17rem;
 }
 .imgcontent {
-  width: 1200px;
+  width: 9.2rem;
+  height: 1.99rem;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   align-content: space-between;
-  margin-top: 50px;
 }
 .imgitem {
-  width: 140px;
-  height: 68px;
+  width: 1.05rem;
+  height: 0.49rem;
   background-color: #ffffff;
   border: solid 1px #e1e1e1;
-  margin: 14px;
+  margin: 0 0.18rem 0.18rem 0;
 }
 .imgitem img {
   max-width: 100%;
