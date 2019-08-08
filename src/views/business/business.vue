@@ -10,8 +10,14 @@
     <Fourimg class="fourimg"></Fourimg>
     <!-- 我们的业务 -->
     <div class="content">
-      <p class="titlebg">OUR SERVICE</p>
-      <p class="title">我们的业务</p>
+      <!-- 上面标题 -->
+      <div class="four">
+        <div class="title">
+          <div class="redshu"></div>
+          <div class="fourimg_title">成功案例</div>
+          <div class="OURSERVICE">SUCCESSFUL CASES</div>
+        </div>
+      </div>
       <div class="img1">
         <img src="../../assets/imgs/business/business1.jpg" alt />
       </div>
@@ -56,12 +62,6 @@ export default {
   methods: {
     //axios请求
     businesses: function() {
-      //查询条件
-      //   var param = {
-      //     page: page,
-      //     pageSize: pageSize
-      //     //其它查询条件可在下面添加
-      //   };
       this.$api.get(
         "businesses",
         {
@@ -144,82 +144,73 @@ export default {
 </script>
 <style scoped>
 .business {
-  width: 100%；;
+  width: 100%;
+  background: #f8f8f8;
 }
 .top {
-  width: 100%;
-  /* height: 700px; */
-  margin-bottom: 100px;
+  width: 10rem;
+  height: 100%;
+  /* height: 4.55rem; */
 }
 .top img {
   width: 100%;
-  /* height: 100%; */
-  max-height: 600px;
 }
 .fourimg {
   height: 100%;
 }
 .content {
-  width: 100%;
+  width: 10rem;
+  background-color: #ffffff;
   padding: 1px;
   box-sizing: border-box;
 }
-.titlebg {
-  width: 243px;
-  height: 40px;
-  font-family: Impact;
-  font-size: 48px;
-  font-weight: normal;
-  font-stretch: normal;
-  line-height: 40px;
-  letter-spacing: 0px;
-  color: #b81b22;
-  opacity: 0.2;
-  margin: 80px auto 0 auto;
+
+.four {
+  height: 1.21rem;
+  display: flex;
+  align-items: center;
 }
 .title {
-  width: 120px;
-  height: 24px;
-  font-family: MicrosoftYaHei-Bold;
-  font-size: 24px;
+  display: flex;
+  align-items: flex-end;
+  height: 0.4rem;
+}
+.redshu {
+  width: 0.05rem;
+  height: 0.4rem;
+  background-color: #b81b22;
+  border-radius: 0.03rem;
+  margin-right: 0.13rem;
+}
+.OURSERVICE {
+  font-size: 0.27rem;
   font-weight: normal;
   font-stretch: normal;
-  line-height: 24px;
-  letter-spacing: 0px;
-  color: #000000;
-  margin: -12px auto 50px auto;
+  line-height: 0.21rem;
+  letter-spacing: 0rem;
+  color: #c1c1c1;
 }
-.img1 {
-  width: 91.15vw;
-  min-width: 1200px;
-  margin: 0 auto;
+.fourimg_title {
+  height: 0.39rem;
+  font-family: PingFang-SC-Bold;
+  font-size: 0.4rem;
+  font-weight: normal;
+  font-stretch: normal;
+  line-height: 0.39rem;
+  letter-spacing: 0rem;
+  color: #222222;
+  margin-right: 0.17rem;
 }
-.img1 img {
+.content {
   width: 100%;
-  height: 100%;
+  padding: 1px;
+  padding: 0px 0.4rem;
+  margin: 0.27rem auto;
+  box-sizing: border-box;
 }
-.img2 {
+.content img {
   width: 100%;
-}
-.img2_top {
-  width: 91.15vw;
-  min-width: 1200px;
-  text-align: center;
-  background-color: #f8f8f8;
-  margin: 24px auto;
-}
-.img2_top img {
-  width: 1175px;
-}
-.img2_bottom {
-  width: 91.15vw;
-  min-width: 1200px;
-  text-align: center;
-  background-color: #f8f8f8;
-  margin: 24px auto;
-}
-.img2_bottom img {
-  width: 1200px;
-  height: 390px;
+  margin: 0.27rem auto;
+  background: #f8f8f8;
 }
 </style>

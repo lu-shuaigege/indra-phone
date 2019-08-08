@@ -126,6 +126,7 @@ export default {
 <style scoped>
 .contactus {
   width: 100%;
+  background: #ffffff;
 }
 .content {
   width: 100%;

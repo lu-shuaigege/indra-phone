@@ -239,6 +239,7 @@ export default {
   -webkit-line-clamp: 1;
 }
 .imgitem .text {
+  width: max-content;
   display: inline-block;
   height: 0.64rem;
   background-color: #f1f1f1;

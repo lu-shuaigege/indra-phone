@@ -5,23 +5,19 @@
     <div class="top">
       <img :src="bgimg" alt />
     </div>
-    <div class="details_content">
-      <div class="content">
-        <div class="toptitle">
-          <div class="top_left">
-            <p class="title">{{title}}</p>
-            <p class="text">发布时间：{{time}}</p>
-          </div>
-          <a :href="url" target="_blank">
-            <div class="top_right">
-              <img v-show="istrue" src="../../assets/imgs/details/videobtn.png" alt />
-            </div>
-          </a>
+    <div class="content">
+      <div class="toptitle">
+        <div class="top_left">
+          <p class="title">{{title}}</p>
+          <p class="text">发布时间：{{time}}</p>
         </div>
-        <hr class="hr" />
-        <!-- <div class="red"></div> -->
-        <div class="word" v-html="content"></div>
       </div>
+      <div class="word" v-html="content"></div>
+      <a :href="url" target="_blank">
+        <div v-show="istrue" class="top_right">
+          <img src="../../assets/imgs/details/videobtn.png" alt />
+        </div>
+      </a>
     </div>
   </div>
 </template>
@@ -113,40 +109,41 @@ export default {
 .details {
   width: 100%;
 }
-.details_content {
-  width: 91vw;
-  min-width: 1200px;
-  margin: 0 auto;
-}
 .top {
-  width: 100%;
-  /* height: 700px; */
+  width: 10rem;
+  height: 100%;
+  /* height: 4.55rem; */
 }
 .top img {
   width: 100%;
-  margin-bottom: 100px;
-  /* max-height: 600px; */
+}
+.content {
+  width: 10rem;
+  padding: 1px;
+  padding: 0px 0.4rem;
+  margin: 0.27rem auto;
+  box-sizing: border-box;
 }
 .toptitle {
-  width: 1200px;
-  height: 50px;
+  width: 100%；;
+  height: 2.2rem;
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  text-align: center;
   margin: 0 auto;
 }
 .top_left {
-  width: 268px;
-  height: 50px;
+  width: 100%;
 }
 .title {
-  width: 800px;
-  height: 24px;
-  font-family: MicrosoftYaHei;
-  font-size: 24px;
+  height: 0.45rem;
+  font-family: PingFang-SC-Bold;
+  font-size: 0.4rem;
   font-weight: normal;
   font-stretch: normal;
-  line-height: 24px;
-  letter-spacing: 0px;
+  line-height: 0.39rem;
+  letter-spacing: 0rem;
   color: #222222;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -155,39 +152,33 @@ export default {
   -webkit-line-clamp: 1;
 }
 .text {
-  width: 148px;
-  height: 30px;
-  font-family: MicrosoftYaHei;
-  font-size: 14px;
+  width: 3.51rem;
+  height: 0.31rem;
+  font-family: PingFang-SC-Regular;
+  font-size: 0.32rem;
   font-weight: normal;
   font-stretch: normal;
-  line-height: 36px;
-  letter-spacing: 0px;
+  line-height: 0.31rem;
+  letter-spacing: 0rem;
   color: #999999;
   overflow: hidden;
-}
-.contitle {
-  width: 800px;
-  margin: 10px 0 30px 0;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 1;
-}
-.hr {
-  width: 100%;
-  opacity: 0.6;
-  margin-top: 50px;
-}
-.red {
-  width: 60px;
-  height: 3px;
-  background-color: #b81b22;
-  margin: -2px auto 50px auto;
+  margin: 0.2rem auto 0px auto;
 }
 .word {
-  width: 1200px;
-  margin: 50px auto 146px auto;
+  width: 100%;
+  padding: 0.67rem 0px;
+  border-top: 1px solid #e1e1e1;
+  border-bottom: 1px solid #e1e1e1;
+}
+.top_right {
+  width: 2.13rem;
+  height: 0.72rem;
+  background-color: #b81b22;
+  border-radius: 0.11rem;
+  margin: 0.44rem auto 1rem auto;
+}
+.top_right img {
+  width: 100%;
+  height: 100%;
 }
 </style>

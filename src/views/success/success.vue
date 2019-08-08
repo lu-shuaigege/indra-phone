@@ -6,31 +6,41 @@
     <div class="top">
       <img :src="bgimg" alt />
     </div>
-    <!-- 列表 -->
-    <div class="case">
-      <div class="casecontent">
-        <div class="imgcontent">
-          <div
-            class="imgitem"
-            v-for="(caseitem,caseindex) in imglist"
-            :key="caseindex"
-            @click="details(caseitem.id)"
-          >
-            <div class="imgitemcontent">
-              <div class="img">
-                <img :src="caseitem.cover_image" alt />
-              </div>
+    <div class="content">
+      <!-- 上面标题 -->
+      <div class="four">
+        <div class="title">
+          <div class="redshu"></div>
+          <div class="fourimg_title">成功案例</div>
+          <div class="OURSERVICE">SUCCESSFUL CASES</div>
+        </div>
+      </div>
+      <!-- 列表 -->
+      <div class="case">
+        <div class="casecontent">
+          <div class="imgcontent">
+            <div
+              class="imgitem"
+              v-for="(caseitem,caseindex) in imglist"
+              :key="caseindex"
+              @click="details(caseitem.id)"
+            >
+              <div class="imgitemcontent">
+                <div class="img">
+                  <img :src="caseitem.cover_image" alt />
+                </div>
 
-              <p class="imgitemtitle">{{caseitem.title}}</p>
-              <p class="text">{{caseitem.classification}}</p>
+                <p class="imgitemtitle">{{caseitem.title}}</p>
+                <div class="text">{{caseitem.classification}}</div>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-    <div class="yema">
+    <div class="end">- 下拉加载更多 -</div>
+    <div class="yema" style="display:none">
       <v-pagination :total="total" :current-page="current" @pagechange="pagechange"></v-pagination>
-      <!-- <div id="demo7"></div> -->
     </div>
   </div>
 </template>
@@ -57,14 +67,35 @@ export default {
   created() {
     this.caseslist();
     this.topbg();
+    this.pagechange();
   },
   methods: {
     //分页组件向后台发送请求
+    // pagechange: function(currentPage) {
+    //   this.page = currentPage;
+    //   // ajax请求, 向后台发送 currentPage, 来获取对应的数据
+    //   this.pagination();
+    // },
+    //分页
     pagechange: function(currentPage) {
-      this.page = currentPage;
-      // ajax请求, 向后台发送 currentPage, 来获取对应的数据
-      this.pagination();
+      $(window).scroll(function() {
+        var srollPos = $(window).scrollTop() + 0.5; //滚动条距顶部距离(页面超出窗口的高度)
+        console.log(currentPage);
+        console.log(srollPos);
+        console.log($(document).height());
+        console.log($(window).height());
+        if (
+          srollPos >= $(document).height() - $(window).height() &&
+          this.current != this.page
+        ) {
+          current++;
+          this.page = currentPage;
+          // ajax请求, 向后台发送 currentPage, 来获取对应的数据
+          this.pagination();
+        }
+      });
     },
+
     //点击一级分类向后台获取不同的数据
     nav: function(index, id) {
       this.category = id;
@@ -151,99 +182,104 @@ export default {
 <style scoped>
 .success {
   width: 100%;
+
+  box-sizing: border-box;
+  background-color: #ffffff;
 }
 .top {
-  width: 100%;
-  /* height: 700px; */
+  width: 10rem;
+  height: 100%;
+  /* height: 4.55rem; */
 }
 .top img {
   width: 100%;
-  margin-bottom: 100px;
-  /* max-height: 600px; */
+}
+.content {
+  padding: 1px;
+  padding: 0px 0.4rem;
+  margin: 0.27rem auto;
+  box-sizing: border-box;
+}
+.four {
+  height: 1.21rem;
+  display: flex;
+  align-items: center;
+}
+.title {
+  display: flex;
+  align-items: flex-end;
+  height: 0.4rem;
+}
+.redshu {
+  width: 0.05rem;
+  height: 0.4rem;
+  background-color: #b81b22;
+  border-radius: 0.03rem;
+  margin-right: 0.13rem;
+}
+.OURSERVICE {
+  height: 0.21rem;
+  font-family: ArialMT;
+  font-size: 0.27rem;
+  font-weight: normal;
+  font-stretch: normal;
+  line-height: 0.21rem;
+  letter-spacing: 0rem;
+  color: #c1c1c1;
+}
+.fourimg_title {
+  height: 0.39rem;
+  font-family: PingFang-SC-Bold;
+  font-size: 0.4rem;
+  font-weight: normal;
+  font-stretch: normal;
+  line-height: 0.39rem;
+  letter-spacing: 0rem;
+  color: #222222;
+  margin-right: 0.17rem;
 }
 .case {
   width: 100%;
-  /* height: 1300px; */
-  /* height: 69vw; */
-  min-height: 960px;
-  padding: 1px;
-  box-sizing: border-box;
 }
 .casecontent {
   width: 100%;
-  /* height: 1145px; */
   margin: 0 auto;
 }
 .imgcontent {
-  /* width: 92vw; */
-  /* max-width: 1750px; */
-  /* min-width: 1200px; */
-  margin: 50px auto 0 auto;
   display: flex;
   flex-wrap: wrap;
-  justify-content: flex-start;
+  justify-content: space-between;
 }
 .imgitem {
-  width: 33.3%;
-  min-width: 355px;
-  height: 28vw;
-  min-height: 345px;
+  width: 4.4rem;
+  height: 4.76rem;
   background-color: #ffffff;
   box-sizing: border-box;
-  margin-bottom: 50px;
+  margin-bottom: 0.67rem;
   overflow: hidden;
-  /* flex: 33.3%; */
   display: flex;
   justify-content: center;
-  padding: 0px 2vw;
-}
-.imgitemcontent {
-  /* width: 100%; */
-  /* background: #d8362b; */
-}
-.imgitem:hover .imgitemcontent {
-  box-shadow: 0vw 0vw 1vw 0vw rgba(51, 51, 51, 0.15);
-  border-bottom: 2px solid #d8362b;
-  background: #d8362b;
-  /* animation-duration: 2s;
-  animation-delay: 2s;
-  animation-iteration-count: infinite; */
-}
-.imgitem:hover p {
-  color: #ffffff;
-}
-.imgitem:hover img {
-  transition: all 0.5s;
-  -webkit-transition: all 0.5s; /* Safari */
-  cursor: pointer;
-  transform: scale(1.1);
-  -ms-transform: scale(1.1); /* IE 9 */
-  -moz-transform: scale(1.1); /* Firefox */
-  -webkit-transform: scale(1.1); /* Safari 和 Chrome */
-  -o-transform: scale(1.1);
 }
 .img {
   width: 100%;
-  min-width: 355px;
-  height: 22vw;
-  min-height: 269px;
+  height: 3.31rem;
   overflow: hidden;
 }
 .img img {
   width: 100%;
   height: 100%;
 }
-.imgitem .imgitemtitle {
-  /* width: 100%; */
-  height: 21px;
-  font-family: MicrosoftYaHei;
-  font-size: 1vw;
+.imgitemtitle {
+  width: 4.4rem;
+  height: 0.33rem;
+  font-family: PingFang-SC-Medium;
+  font-size: 0.35rem;
   font-weight: normal;
   font-stretch: normal;
-  line-height: 21px;
-  letter-spacing: 0px;
+  line-height: 0.33rem;
+  letter-spacing: 0rem;
   color: #222222;
-  padding: 1.2vw 1vw 0 1vw;
+  padding: 0.27rem 0 0 0;
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
@@ -251,22 +287,38 @@ export default {
   -webkit-line-clamp: 1;
 }
 .imgitem .text {
-  height: 15px;
-  font-family: MicrosoftYaHei;
-  font-size: 14px;
+  width: max-content;
+  display: inline-block;
+  height: 0.64rem;
+  background-color: #f1f1f1;
+  border-radius: 0.11rem;
+  font-family: PingFang-SC-Medium;
+  font-size: 0.29rem;
   font-weight: normal;
   font-stretch: normal;
-  line-height: 15px;
-  letter-spacing: 0px;
+  line-height: 0.28rem;
+  letter-spacing: 0rem;
   color: #999999;
-  padding: 0.5vw 1vw 0 1vw;
+  margin: 0.21rem 0 0 0;
+  padding: 0.19rem;
+  box-sizing: border-box;
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 1;
 }
-.yema {
-  margin-bottom: 170px;
+.end {
+  width: 2.29rem;
+  height: 0.28rem;
+  font-family: PingFang-SC-Medium;
+  font-size: 0.29rem;
+  font-weight: normal;
+  font-stretch: normal;
+  line-height: 0.28rem;
+  letter-spacing: 0rem;
+  color: #c1c1c1;
+  margin: 0px auto 0.7rem auto;
+  box-sizing: border-box;
 }
 </style>

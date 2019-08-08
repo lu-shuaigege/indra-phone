@@ -31,24 +31,39 @@
           <div class="item" @click="closeup(0)">关于英铎</div>
         </router-link>
         <div class="item items">
-          <div class="yeitem" @click="list(1)">
-            <div class="ye">业务介绍</div>
-            <img src="../../assets/imgs/home/topimg.png" class="topimg" v-show="isshow==1" alt />
+          <div class="yeitem">
+            <router-link to="/business">
+              <div class="ye" @click="closeup(0)">业务介绍</div>
+            </router-link>
+            <img
+              src="../../assets/imgs/home/down.png"
+              class="topimg"
+              v-show="isshow==0"
+              @click="list(1)"
+              alt
+            />
+            <img
+              src="../../assets/imgs/home/topimg.png"
+              class="topimg"
+              v-show="isshow==1"
+              @click="list(0)"
+              alt
+            />
           </div>
           <div class="yelist" v-show="isshow==1">
-            <div class="itemlist" @click="closeup(0)">
+            <div class="itemlist" @click="closeup(0,1)">
               <span class="reddian"></span>
               <p class="listcontent">影视节目投资</p>
             </div>
-            <div class="itemlist" @click="closeup(0)">
+            <div class="itemlist" @click="closeup(0,2)">
               <span class="reddian"></span>
               <p class="listcontent">短视频内容营销</p>
             </div>
-            <div class="itemlist" @click="closeup(0)">
+            <div class="itemlist" @click="closeup(0,3)">
               <span class="reddian"></span>
               <p class="listcontent">华为移动媒体投放</p>
             </div>
-            <div class="itemlist" @click="closeup(0)">
+            <div class="itemlist" @click="closeup(0,4)">
               <span class="reddian"></span>
               <p class="listcontent">交通出行媒体</p>
             </div>
@@ -96,10 +111,11 @@ export default {
         .css("height", "17.7rem")
         .css("overflow", "hidden");
     },
-    closeup: function(x) {
+    closeup: function(x, y) {
       this.istrue = x;
       this.isshow = x;
       $("#app").css("height", "");
+      this.xiang(y);
     },
     // 列表下拉列表显示不显示
     list: function(y) {
@@ -107,9 +123,8 @@ export default {
     },
     xiang(row) {
       // 阻止浏览器的冒泡
-      // window.event ? (window.event.cancelBubble = true) : e.stopPropagation();
-      // this.stopBubble();
-      this.stopDefault();
+      // window.event ? (window.event.cancelBubble = true) : e.stopPropagation();、
+      console.log(1111111111111111111111);
       this.business_id = row;
       this.$store.commit("item_id", this.business_id);
       //把页面要传的参数存到sessionStorage里面
