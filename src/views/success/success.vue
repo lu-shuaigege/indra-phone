@@ -56,7 +56,10 @@ export default {
       category: 1, //一级分类
       page: 1, //页码
       imglist: [],
-      bgimg: ""
+      bgimg: "",
+      current: 1,
+      current_page: 1, //后台当前页码
+      last_page: 1 //后台最后页码
     };
   },
   components: {
@@ -77,21 +80,25 @@ export default {
     //   this.pagination();
     // },
     //分页
-    pagechange: function(currentPage) {
+    pagechange: function() {
+      let that = this;
       $(window).scroll(function() {
         var srollPos = $(window).scrollTop() + 0.5; //滚动条距顶部距离(页面超出窗口的高度)
-        console.log(currentPage);
-        console.log(srollPos);
-        console.log($(document).height());
-        console.log($(window).height());
+        // console.log(srollPos);
+        // console.log($(document).height());
+        // console.log($(window).height());
+        console.log(srollPos >= $(document).height() - $(window).height());
         if (
           srollPos >= $(document).height() - $(window).height() &&
-          this.current != this.page
+          that.current_page <= that.last_page
         ) {
-          current++;
-          this.page = currentPage;
-          // ajax请求, 向后台发送 currentPage, 来获取对应的数据
-          this.pagination();
+          that.current++;
+          that.page = that.current;
+          // ajax请求, 向后台发送 , 来获取对应的数据
+          that.pagination();
+
+          console.log(11111111111);
+          console.log(that.page);
         }
       });
     },
@@ -115,7 +122,13 @@ export default {
         response => {
           if (response.status >= 200 && response.status < 300) {
             console.log(response.data); //请求成功，response为成功信息参数
-            this.imglist = response.data.data.data;
+            let data = response.data.data.data;
+            console.log(data);
+            for (var index in data) {
+              // console.log(data[index]);
+              this.imglist.push(data[index]);
+            }
+
             this.total = response.data.data.total;
             this.display = response.data.per_page;
             console.log(this.imglist);
@@ -158,7 +171,7 @@ export default {
         }
       );
     },
-    //axios请求
+    //axios请求最上面banner
     topbg: function() {
       this.$api.get(
         "banners/cases",
@@ -309,7 +322,7 @@ export default {
   -webkit-line-clamp: 1;
 }
 .end {
-  width: 2.29rem;
+  /* width: 2.39rem; */
   height: 0.28rem;
   font-family: PingFang-SC-Medium;
   font-size: 0.29rem;
@@ -320,5 +333,6 @@ export default {
   color: #c1c1c1;
   margin: 0px auto 0.7rem auto;
   box-sizing: border-box;
+  text-align: center;
 }
 </style>

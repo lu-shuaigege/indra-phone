@@ -136,7 +136,7 @@ export default {
   },
   //让页面滚动到顶部
   mounted() {
-    this.$router.afterEach((to, from, next) => {
+    this.$router.afterEach((from, next) => {
       window.scrollTo(0, 0);
     });
     // this.upabout();
