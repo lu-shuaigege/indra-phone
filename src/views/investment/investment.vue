@@ -85,7 +85,7 @@ export default {
     this.active = sessionStorage.getItem("business_id");
     this.businessesid();
     // this.businesses();
-    this.topimg();
+    this.topimg(sessionStorage.getItem("business_id"));
   },
   watch: {
     "$store.state.item_id": function() {
@@ -109,8 +109,9 @@ export default {
       console.log(this.active);
       this.businessesid();
       this.isshow = 0;
+      this.topimg(index);
     },
-    //axios请求
+    //axios请求业务介绍详情
     businessesid: function() {
       this.$api.get(
         "businesses/" + this.active,
@@ -145,10 +146,10 @@ export default {
         }
       );
     },
-    //axios请求
-    topimg: function() {
+    //axios请求业务介绍上面图片
+    topimg: function(x) {
       this.$api.get(
-        "banners/businesses",
+        "banners/businesses/" + x,
         {
           // page: 1,
           // pageSize: 10
@@ -191,7 +192,7 @@ export default {
   background-color: rgba(183, 26, 34, 0.7);
   /* opacity: 0.7; */
   position: absolute;
-  bottom: 0px;
+  bottom: 0.07rem;
   left: 0px;
   padding: 1px;
   padding: 0px 0.4rem;
@@ -221,7 +222,7 @@ span {
 }
 .list {
   position: absolute;
-  bottom: -2.77rem;
+  bottom: -2.7rem;
 }
 .item {
   width: 10rem;

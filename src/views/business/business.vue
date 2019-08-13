@@ -14,8 +14,8 @@
       <div class="four">
         <div class="title">
           <div class="redshu"></div>
-          <div class="fourimg_title">成功案例</div>
-          <div class="OURSERVICE">SUCCESSFUL CASES</div>
+          <div class="fourimg_title">我们的业务</div>
+          <div class="OURSERVICE">OUR SERVICE</div>
         </div>
       </div>
       <div class="img1">
@@ -186,7 +186,7 @@ export default {
   font-size: 0.27rem;
   font-weight: normal;
   font-stretch: normal;
-  line-height: 0.21rem;
+  line-height: 0.27rem;
   letter-spacing: 0rem;
   color: #c1c1c1;
 }
@@ -212,5 +212,7 @@ export default {
   width: 100%;
   margin: 0.27rem auto;
   background: #f8f8f8;
+  padding: 1rem 0;
+  box-sizing: border-box;
 }
 </style>

@@ -142,7 +142,7 @@ export default {
   font-size: 0.4rem;
   font-weight: normal;
   font-stretch: normal;
-  line-height: 0.39rem;
+  line-height: 0.45rem;
   letter-spacing: 0rem;
   color: #222222;
   overflow: hidden;
@@ -153,12 +153,12 @@ export default {
 }
 .text {
   width: 3.51rem;
-  height: 0.31rem;
+  height: 0.4rem;
   font-family: PingFang-SC-Regular;
   font-size: 0.32rem;
   font-weight: normal;
   font-stretch: normal;
-  line-height: 0.31rem;
+  line-height: 0.4rem;
   letter-spacing: 0rem;
   color: #999999;
   overflow: hidden;

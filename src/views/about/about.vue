@@ -34,9 +34,9 @@
       </div>
       <div class="majortop_right">
         <div class="majortop_content_right">
-          <p class="namep">
-            <span class="name">李国兴</span>
+          <p class="namep namep_right">
             <span class="ying">Jon Zhou</span>
+            <span class="name namep_right_name">李国兴</span>
           </p>
           <p class="job">新联在线创始人、国际区域董事长</p>
           <p
@@ -299,12 +299,18 @@ export default {
   height: 0.36rem;
   font-family: PingFang-SC-Bold;
   font-size: 0.37rem;
-  font-weight: normal;
+  font-weight: bold;
   font-stretch: normal;
   line-height: 0.36rem;
   letter-spacing: 0rem;
   color: #222222;
   margin-right: 0.11rem;
+}
+.namep_right{
+  text-align: right;
+}
+.namep_right_name{
+  margin-left: 0.11rem;
 }
 .ying {
   height: 0.23rem;

@@ -3,7 +3,7 @@
   <div class="nav">
     <div class="navcontent">
       <div class="navimg_left">
-        <img src="../../assets/imgs/home/navlogo.png" alt />
+        <router-link to="/home"><img src="../../assets/imgs/home/navlogo.png" alt /></router-link>
       </div>
       <div class="navimg_right">
         <img
@@ -202,7 +202,7 @@ export default {
   width: 10rem;
   padding: 0px 0.4rem;
   box-sizing: border-box;
-  background: #ffffff;
+  background: #f8f8f8;
 }
 .item {
   /* height: 1.33rem; */

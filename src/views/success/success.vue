@@ -284,15 +284,15 @@ export default {
 }
 .imgitemtitle {
   width: 4.4rem;
-  height: 0.33rem;
+  height: 0.4rem;
   font-family: PingFang-SC-Medium;
   font-size: 0.35rem;
   font-weight: normal;
   font-stretch: normal;
-  line-height: 0.33rem;
+  line-height: 0.46rem;
   letter-spacing: 0rem;
   color: #222222;
-  padding: 0.27rem 0 0 0;
+  padding: 0.2rem 0 0 0;
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;

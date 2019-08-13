@@ -20,6 +20,12 @@
           <div class="fourimg_title">成功案例</div>
           <div class="OURSERVICE">SUCCESSFUL CASES</div>
         </div>
+        <router-link to="/success">
+          <div class="gengduo">
+            <span>更多</span>
+            <img src="../../assets/imgs/home/index-more.png" alt />
+          </div>
+        </router-link>
       </div>
       <!-- 列表 -->
       <div class="case">
@@ -154,6 +160,7 @@ export default {
   height: 1.21rem;
   display: flex;
   align-items: center;
+  justify-content: space-between;
 }
 .title {
   display: flex;
@@ -187,6 +194,24 @@ export default {
   letter-spacing: 0rem;
   color: #222222;
   margin-right: 0.17rem;
+}
+.gengduo {
+  width: 1.1rem;
+  height: 0.307rem;
+  font-family: PingFang-SC-Medium;
+  font-size: 0.32rem;
+  font-weight: normal;
+  font-stretch: normal;
+  line-height: 0.307rem;
+  letter-spacing: 0rem;
+  color: #999999;
+  display: flex;
+  align-items: center;
+}
+.gengduo img {
+  width: 0.307rem;
+  height: 0.307rem;
+  margin-left: 0.147rem;
 }
 .case {
   width: 100%;
@@ -223,15 +248,15 @@ export default {
 }
 .imgitemtitle {
   width: 4.4rem;
-  height: 0.33rem;
+  height: 0.4rem;
   font-family: PingFang-SC-Medium;
   font-size: 0.35rem;
   font-weight: normal;
   font-stretch: normal;
-  line-height: 0.33rem;
+  line-height: 0.46rem;
   letter-spacing: 0rem;
   color: #222222;
-  padding: 0.27rem 0 0 0;
+  padding: 0.2rem 0 0 0;
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
