@@ -24,6 +24,7 @@ export default {
 #app {
   margin: 0px;
   padding: 0px;
+  background: #ffffff;
 }
 ul {
   list-style: none;

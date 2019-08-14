@@ -5,7 +5,7 @@
     <!-- <Topbg></Topbg> -->
     <div class="top">
       <img class="img" :src="bgimg" alt />
-      <div class="redbtn">
+      <div class="redbtn" id="redbtn">
         <div class="listtop">
           <div
             class="redbtncontent"
@@ -31,9 +31,9 @@
           />
         </div>
       </div>
-      <div class="list" v-show="isshow==1">
+      <div class="red_list" v-show="isshow==1">
         <div class="item" v-for="(item,index) in tablist" :key="index" v-show="item.id!=active">
-          <span @click="nav(item.id)">{{item.title}}</span>
+          <span class="item_span" @click="nav(item.id)">{{item.title}}</span>
         </div>
       </div>
     </div>
@@ -71,7 +71,8 @@ export default {
       image: "",
       active: 0,
       bgimg: "",
-      isshow: 0
+      isshow: 0,
+      redbtn: 0
     };
   },
   components: {
@@ -80,12 +81,16 @@ export default {
   created() {
     // 接收路由跳转Params里面传过来的参数
     // this.active = this.$route.params.business_id;
-
     //从sessionStorage把页面要用的参数取出来
     this.active = sessionStorage.getItem("business_id");
     this.businessesid();
     // this.businesses();
     this.topimg(sessionStorage.getItem("business_id"));
+  },
+  mounted() {
+    window.addEventListener("scroll", this.four);
+    // this.redbtn = document.querySelector("#redbtn").offsetTop; //当前元素到浏览器顶部的距离
+    // sessionStorage.setItem("redbtn", this.redbtn);
   },
   watch: {
     "$store.state.item_id": function() {
@@ -163,7 +168,43 @@ export default {
           }
         }
       );
+    },
+    four: function() {
+      //判断元素到达当前窗口的什么位置（四图）
+      let isfour = true;
+      let nav = parseInt(sessionStorage.getItem("navpx"));
+      let tabBar = parseInt(
+        document.getElementsByClassName("redbtn")[0].offsetTop
+      ); //当前元素到浏览器顶部的距离
+      let t = document.documentElement.scrollTop || document.body.scrollTop; //浏览器滚动的距离
+      let all = tabBar + nav;
+      let redbtn = parseInt(sessionStorage.getItem("redbtn"));
+      console.log(redbtn);
+      console.log(tabBar);
+      console.log(nav);
+      console.log(t);
+      console.log(all);
+      if (all < t) {
+        $(".redbtn")
+          .css("position", "fixed")
+          .css("top", "0px");
+        $(".red_list")
+          .css("position", "fixed")
+          .css("top", "0.93rem");
+      } else if (all > t) {
+        $(".redbtn")
+          .css("position", "absolute")
+          .css("bottom", "0.07rem")
+          .css("top", "");
+        $(".red_list")
+          .css("position", "absolute")
+          .css("top", "")
+          .css("bottom", "-2.7rem");
+      }
     }
+  },
+  beforeDestroy() {
+    window.removeEventListener("scroll", this.four);
   }
 };
 </script>
@@ -192,7 +233,7 @@ export default {
   background-color: rgba(183, 26, 34, 0.7);
   /* opacity: 0.7; */
   position: absolute;
-  bottom: 0.07rem;
+  bottom: 0.09rem;
   left: 0px;
   padding: 1px;
   padding: 0px 0.4rem;
@@ -220,9 +261,9 @@ span {
   width: 0.45rem;
   height: 0.25rem;
 }
-.list {
+.red_list {
   position: absolute;
-  bottom: -2.7rem;
+  bottom: -2.705rem;
 }
 .item {
   width: 10rem;
@@ -231,6 +272,12 @@ span {
   padding: 1px;
   padding: 0px 0.4rem;
   box-sizing: border-box;
+  display: flex;
+  align-items: center;
+}
+.item_span {
+  width: 100%;
+  height: 100%;
   display: flex;
   align-items: center;
 }

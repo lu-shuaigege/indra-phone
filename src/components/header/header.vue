@@ -3,7 +3,9 @@
   <div class="nav">
     <div class="navcontent">
       <div class="navimg_left">
-        <router-link to="/home"><img src="../../assets/imgs/home/navlogo.png" alt /></router-link>
+        <router-link to="/home">
+          <img @click="closeup(0)" src="../../assets/imgs/home/navlogo.png" alt />
+        </router-link>
       </div>
       <div class="navimg_right">
         <img
@@ -17,7 +19,7 @@
           src="../../assets/imgs/home/close.png"
           alt
           v-show="istrue==1"
-          @click="closeup(0)"
+          @click="close_icon(0)"
           class="img2"
         />
       </div>
@@ -90,7 +92,8 @@ export default {
       business_list: [],
       active: 0,
       istrue: 0,
-      isshow: 0
+      isshow: 0,
+      navpx: 0
     };
   },
   created() {
@@ -101,6 +104,11 @@ export default {
       this.active = sessionStorage.getItem("titleactive");
     }
   },
+  mounted() {
+    this.navpx = document.getElementsByClassName("nav")[0].offsetHeight; //当前元素的高度
+    this.$store.commit("nav", this.navpx);
+    sessionStorage.setItem("navpx", this.navpx);
+  },
   watch: {},
   methods: {
     // 导航显示不显示
@@ -110,6 +118,10 @@ export default {
       $("#app")
         .css("height", "17.7rem")
         .css("overflow", "hidden");
+    },
+    close_icon: function(x) {
+      this.istrue = x;
+      $("#app").css("height", "");
     },
     closeup: function(x, y) {
       this.istrue = x;
@@ -165,6 +177,7 @@ export default {
   background-color: #ffffff;
   box-shadow: inset 0rem -0.01rem 0rem 0rem rgba(0, 0, 0, 0.1);
   margin: 0px auto;
+  z-index: initial;
 }
 .navcontent {
   width: 9.2rem;

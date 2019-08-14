@@ -40,27 +40,34 @@ export default {
       address: [
         {
           url: require("../../assets/imgs/contactus/contactus5.png"),
-          title: "上海市长宁区通协路288弄旭辉虹桥国际8号楼",
-          t: "T：021-32793333",
-          f: "F：021-32527558"
+          title: "沈阳总部：",
+          t: "沈阳市沈河区十一纬路169号富中大厦六楼",
+          f: "TEL：22874455"
         },
         {
           url: require("../../assets/imgs/contactus/contactus1.png"),
-          title: "北京朝阳区朝外大街三丰北里7号悠唐国际写字楼B17层",
-          t: "T：010-65683610",
-          f: "F：010-65681811"
+          title: "北京分公司：",
+          t: "北京市朝阳区广渠路3号竞园商五 ",
+          f: "TEL：010-61655810"
         },
         {
+          url: require("../../assets/imgs/contactus/contactus6.png"),
+          title: "上海分公司：",
+          t: "上海市静安区南京西路1038号梅龙镇广场1704室",
+          f: "TEL：021-52181103"
+        },
+
+        {
           url: require("../../assets/imgs/contactus/contactus3.png"),
-          title: "广州市天河区金穗路62号侨鑫国际23A层01号",
-          t: "T：021-32793333",
-          f: "F：021-32527558"
+          title: "长春办事处：",
+          t: "地址：",
+          f: "长春宽城区凯旋路466号万达华宅2号楼一单元1102 "
         },
         {
           url: require("../../assets/imgs/contactus/contactus4.png"),
-          title: "杭州市虎玉路41号八卦田公园正大门",
-          t: "T：0571-81590666",
-          f: "F：0571-87926089"
+          title: "大连办事处：",
+          t: "地址：",
+          f: "大连市中山区香榭丽广场C座1711室"
         }
       ],
       bgimg: ""
