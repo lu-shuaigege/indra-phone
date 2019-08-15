@@ -207,7 +207,7 @@ export default {
   height: 1rem;
   display: flex;
   align-items: center;
-  justify-content: left;
+  justify-content: center;
 }
 .item_img img {
   max-width: 1.2rem;
