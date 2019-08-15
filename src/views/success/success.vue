@@ -57,7 +57,6 @@ export default {
       page: 1, //页码
       imglist: [],
       bgimg: "",
-      current: 1,
       current_page: 1, //后台当前页码
       last_page: 1 //后台最后页码
     };

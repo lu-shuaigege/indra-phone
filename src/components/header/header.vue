@@ -136,7 +136,6 @@ export default {
     xiang(row) {
       // 阻止浏览器的冒泡
       // window.event ? (window.event.cancelBubble = true) : e.stopPropagation();、
-      console.log(1111111111111111111111);
       this.business_id = row;
       this.$store.commit("item_id", this.business_id);
       //把页面要传的参数存到sessionStorage里面
