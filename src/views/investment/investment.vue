@@ -194,12 +194,12 @@ export default {
       } else if (all > t) {
         $(".redbtn")
           .css("position", "absolute")
-          .css("bottom", "0.07rem")
+          .css("bottom", "-0.93rem")
           .css("top", "");
         $(".red_list")
           .css("position", "absolute")
           .css("top", "")
-          .css("bottom", "-2.7rem");
+          .css("bottom", "-3.72rem");
       }
     }
   },
@@ -223,6 +223,7 @@ export default {
 .top {
   width: 10rem;
   position: relative;
+  font-size: 0;
 }
 .top .img {
   width: 100%;
@@ -230,10 +231,10 @@ export default {
 .redbtn {
   width: 10rem;
   height: 0.93rem;
-  background-color: rgba(183, 26, 34, 0.7);
+  background-color: #881A20;
   /* opacity: 0.7; */
   position: absolute;
-  bottom: 0.09rem;
+  bottom: -0.93rem;
   left: 0px;
   padding: 1px;
   padding: 0px 0.4rem;
@@ -263,7 +264,7 @@ span {
 }
 .red_list {
   position: absolute;
-  bottom: -2.705rem;
+  bottom: -3.72rem;
 }
 .item {
   width: 10rem;
@@ -286,6 +287,7 @@ span {
 }
 .item_img {
   width: 100%;
+  margin-top: 0.93rem;
 }
 .item_img img {
   width: 100%;

@@ -38,7 +38,7 @@
         </div>
       </div>
     </div>
-    <div class="end">- 下拉加载更多 -</div>
+    <div class="end" v-text="updown"></div>
     <div class="yema" style="display:none">
       <v-pagination :total="total" :current-page="current" @pagechange="pagechange"></v-pagination>
     </div>
@@ -58,7 +58,8 @@ export default {
       imglist: [],
       bgimg: "",
       current_page: 1, //后台当前页码
-      last_page: 1 //后台最后页码
+      last_page: 1, //后台最后页码
+      updown: "- 下拉加载更多 -"
     };
   },
   components: {
@@ -98,6 +99,9 @@ export default {
 
           console.log(11111111111);
           console.log(that.page);
+          if ((that.current_page = that.last_page)) {
+            // that.updown = "我也是有底线的";
+          }
         }
       });
     },
@@ -130,7 +134,12 @@ export default {
 
             this.total = response.data.data.total;
             this.display = response.data.per_page;
+            this.current_page = response.data.current_page;
+            this.last_page = response.data.last_page;
             console.log(this.imglist);
+            if (this.current_page == this.last_page) {
+              this.updown = "- 我也是有底线的 -";
+            }
           } else {
             console.log(response.message); //请求失败，response为失败信息
           }

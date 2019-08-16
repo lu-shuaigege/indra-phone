@@ -60,13 +60,11 @@ export default {
         {
           url: require("../../assets/imgs/contactus/contactus3.png"),
           title: "长春办事处：",
-          t: "地址：",
           f: "长春宽城区凯旋路466号万达华宅2号楼一单元1102 "
         },
         {
           url: require("../../assets/imgs/contactus/contactus4.png"),
           title: "大连办事处：",
-          t: "地址：",
           f: "大连市中山区香榭丽广场C座1711室"
         }
       ],
@@ -152,15 +150,15 @@ export default {
 .title {
   width: 6.67rem;
   height: 1.63rem;
-  font-family: PingFang-SC-Medium;
-  font-size: 0.37rem;
-  font-weight: normal;
+  font-family: 微软雅黑;
+  font-size: 0.3rem;
+  /* font-weight: normal; */
   font-stretch: normal;
   line-height: 0.54rem;
-  letter-spacing: 0rem;
+  /* letter-spacing: 0rem; */
   color: #222222;
   text-align: center;
-  margin: 0 auto;
+  margin: 0 auto 0.3rem auto;
 }
 .img {
   width: 100%;
