@@ -22,12 +22,25 @@
         <img src="../../assets/imgs/business/business1.jpg" alt />
       </div>
       <div class="img2">
+        <div class="word">
+          <p class="word_title">
+            <b>强势媒体资源</b>
+          </p>
+          <p class="word_content">确保整合传播效果</p>
+          <p class="content_word">
+            12年紧密合作的媒体平台
+            <br />2000+实效营销网红/KOL
+            <br />350+高流量明星合作资源
+            <br />强势出行媒体的独家性运营
+            <br />HUAWEI移动媒体的强势合作
+          </p>
+        </div>
         <div class="img2_top">
           <img src="../../assets/imgs/business/business2.jpg" alt />
         </div>
-        <div class="img2_bottom">
+        <!-- <div class="img2_bottom">
           <img src="../../assets/imgs/business/business3.jpg" alt />
-        </div>
+        </div>-->
       </div>
     </div>
     <!-- 合作方 -->
@@ -204,7 +217,7 @@ export default {
 .content {
   width: 100%;
   padding: 1px;
-  padding: 0px 0.4rem;
+  padding: 0px 0.4rem 0.4rem 0.4rem;
   margin: 0.27rem auto;
   box-sizing: border-box;
 }
@@ -213,6 +226,39 @@ export default {
   margin: 0.27rem auto;
   background: #f8f8f8;
   padding: 1rem 0;
+  box-sizing: border-box;
+}
+.img2 {
+  width: 9.2rem;
+  /* height: 16rem; */
+  background-color: #f8f8f8;
+  padding: 0.667rem 0.28rem;
+  box-sizing: border-box;
+}
+.word {
+  font-family: 微软雅黑;
+  font-size: 0.4rem;
+  font-weight: normal;
+  font-stretch: normal;
+  line-height: 0.56rem;
+  letter-spacing: 0rem;
+  color: #000000;
+  text-align: center;
+}
+.content_word {
+  font-family: MicrosoftYaHei;
+  font-size: 0.347rem;
+  font-weight: normal;
+  font-stretch: normal;
+  line-height: 0.7rem;
+  letter-spacing: 0rem;
+  color: #666666;
+  background: #f8f8f8;
+  margin-top: 0.5rem;
+}
+.img2_top img {
+  width: 100%;
+  padding-top: 1rem;
   box-sizing: border-box;
 }
 </style>
