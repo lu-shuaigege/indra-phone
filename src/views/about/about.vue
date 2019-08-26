@@ -55,7 +55,8 @@
               <span class="ying">{{item.ying}}</span>
             </p>
             <p class="job">{{item.job}}</p>
-            <p class="itemword" @click="xiangtan(item.itemword)">{{item.itemword}}</p>
+            <p class="itemword">{{item.itemword}}</p>
+            <p class="clickbig" @click="xiangtan(item.itemword)">查看更多</p>
           </div>
         </div>
       </div>
@@ -78,6 +79,7 @@
       </div>
     </div>
     <div class="tanxiang" @click="over()">
+      <img class="close" src="../../assets/imgs/about/close.png" alt />
       <p class="xiangp">{{xiang}}</p>
     </div>
   </div>
@@ -407,7 +409,7 @@ export default {
 }
 .itemword {
   width: 3.37rem;
-  height: 2.33rem;
+  height: 1.83rem;
   font-family: PingFang-SC-Medium;
   font-size: 0.32rem;
   font-weight: normal;
@@ -421,7 +423,7 @@ export default {
   text-overflow: ellipsis;
   display: -webkit-box;
   -webkit-box-orient: vertical;
-  -webkit-line-clamp: 5;
+  -webkit-line-clamp: 4;
 }
 .major_bottom {
   width: 10rem;
@@ -431,6 +433,10 @@ export default {
   padding: 0px 0.4rem;
   margin: 0.27rem auto;
   box-sizing: border-box;
+}
+.clickbig {
+  text-align: center;
+  margin: 0.2rem auto;
 }
 .bigimg {
   width: 100%;
@@ -455,13 +461,20 @@ export default {
   padding: 0px 2rem;
   box-sizing: border-box;
 }
-.xiangp{
+.xiangp {
   background: #ffffff;
   color: #000;
   font-size: 0.3rem;
   border-radius: 0.3rem;
   padding: 0.5rem 0.5rem;
   box-sizing: border-box;
-  line-height: 0.87rem
+  line-height: 0.87rem;
+}
+.close {
+  width: 0.5rem;
+  height: 0.5rem;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
 }
 </style>
