@@ -418,7 +418,6 @@ export default {
   letter-spacing: 0rem;
   color: #666666;
   text-align: left;
-
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
