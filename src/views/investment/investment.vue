@@ -96,8 +96,6 @@ export default {
     "$store.state.item_id": function() {
       //你需要执行的代码
       this.active = this.$store.state.item_id;
-      console.log(this.active);
-      console.log(this.$store.state.item_id);
       this.businessesid();
     }
   },
@@ -111,7 +109,6 @@ export default {
       //把页面要传的参数存到sessionStorage里面
       this.active = sessionStorage.setItem("business_id", index);
       this.active = index;
-      console.log(this.active);
       this.businessesid();
       this.isshow = 0;
       this.topimg(index);
@@ -125,10 +122,8 @@ export default {
         },
         response => {
           if (response.status >= 200 && response.status < 300) {
-            console.log(response.data); //请求成功，response为成功信息参数
             this.image = response.data.data.image;
           } else {
-            console.log(response.message); //请求失败，response为失败信息
           }
         }
       );
@@ -143,10 +138,8 @@ export default {
         },
         response => {
           if (response.status >= 200 && response.status < 300) {
-            console.log(response.data); //请求成功，response为成功信息参数
             this.tablist = response.data.data;
           } else {
-            console.log(response.message); //请求失败，response为失败信息
           }
         }
       );
@@ -161,10 +154,8 @@ export default {
         },
         response => {
           if (response.status >= 200 && response.status < 300) {
-            console.log(response.data); //请求成功，response为成功信息参数
             this.bgimg = response.data.data[0].image;
           } else {
-            console.log(response.message); //请求失败，response为失败信息
           }
         }
       );
@@ -179,11 +170,6 @@ export default {
       let t = document.documentElement.scrollTop || document.body.scrollTop; //浏览器滚动的距离
       let all = tabBar + nav;
       let redbtn = parseInt(sessionStorage.getItem("redbtn"));
-      console.log(redbtn);
-      console.log(tabBar);
-      console.log(nav);
-      console.log(t);
-      console.log(all);
       if (all < t) {
         $(".redbtn")
           .css("position", "fixed")

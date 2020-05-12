@@ -45,10 +45,8 @@ export default {
         },
         response => {
           if (response.status >= 200 && response.status < 300) {
-            console.log(response.data); //请求成功，response为成功信息参数
             this.imgs = response.data.data;
           } else {
-            console.log(response.message); //请求失败，response为失败信息
           }
         }
       );
@@ -61,7 +59,6 @@ export default {
           $(".andtitle").offset().top -
           $(window).scrollTop() -
           $(window).height();
-        console.log(istitle);
         if (istitle < -100 && isup) {
           $(".andtitle")
             .css("margin-top", "0")

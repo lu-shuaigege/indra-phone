@@ -94,10 +94,8 @@ export default {
         },
         response => {
           if (response.status >= 200 && response.status < 300) {
-            // console.log(response.data); //请求成功，response为成功信息参数
             this.bgimg = response.data.data[0].image;
           } else {
-            console.log(response.message); //请求失败，response为失败信息
           }
         }
       );
@@ -105,22 +103,18 @@ export default {
     up: function() {
       //判断元素到达当前窗口的什么位置（简介）
       var isup = true;
-      let tabBar = document.getElementsByClassName("address_content")[0]
-        .offsetTop;
-      let t = document.documentElement.scrollTop || document.body.scrollTop;
-      let h = document.documentElement.clientHeight;
-      console.log(tabBar);
-      console.log(t);
-      console.log(h);
-      let isshow = tabBar - t - h;
-      console.log(isshow);
-      if (isshow < -100 && isup) {
-        $(".address_content")
-          .css("margin-top", "0")
-          .css("opacity", "1");
-        // alert("ok");
-        isup = false;
-      }
+    //   let tabBar = document.getElementsByClassName("address_content")[0]
+    //     .offsetTop;
+    //   let t = document.documentElement.scrollTop || document.body.scrollTop;
+    //   let h = document.documentElement.clientHeight;
+    //   let isshow = tabBar - t - h;
+    //   if (isshow < -100 && isup) {
+    //     $(".address_content")
+    //       .css("margin-top", "0")
+    //       .css("opacity", "1");
+    //     // alert("ok");
+    //     isup = false;
+    //   }
     }
   },
   beforeDestroy() {

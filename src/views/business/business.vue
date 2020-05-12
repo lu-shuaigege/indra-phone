@@ -84,10 +84,8 @@ export default {
                 },
                 response => {
                     if (response.status >= 200 && response.status < 300) {
-                        console.log(response.data); //请求成功，response为成功信息参数
                         this.imgs = response.data.data;
                     } else {
-                        console.log(response.message); //请求失败，response为失败信息
                     }
                 }
             );
@@ -108,10 +106,8 @@ export default {
                 },
                 response => {
                     if (response.status >= 200 && response.status < 300) {
-                        console.log(response.data); //请求成功，response为成功信息参数
                         this.bgimg = response.data.data[0].image;
                     } else {
-                        console.log(response.message); //请求失败，response为失败信息
                     }
                 }
             );
@@ -123,11 +119,7 @@ export default {
             let t =
                 document.documentElement.scrollTop || document.body.scrollTop;
             let h = document.documentElement.clientHeight;
-            console.log(tabBar);
-            console.log(t);
-            console.log(h);
             let isshow = tabBar - t - h;
-            console.log(isshow);
             if (isshow < -100 && isfour) {
                 $(".four")
                     .css("margin-top", "0")
@@ -136,20 +128,16 @@ export default {
                 isfour = false;
             }
             var isup = true;
-            let andtitle = document.getElementsByClassName("andtitle")[0]
-                .offsetTop;
-            console.log(tabBar);
-            console.log(t);
-            console.log(h);
-            let isandlistshow = andtitle - t - h;
-            console.log(isandlistshow);
-            if (isandlistshow < -100 && isup) {
-                $(".andtitle")
-                    .css("margin-top", "0")
-                    .css("opacity", "1");
-                // alert("ok");
-                isup = false;
-            }
+            // let andtitle = document.getElementsByClassName("andtitle")[0]
+            //     .offsetTop;
+            // let isandlistshow = andtitle - t - h;
+            // if (isandlistshow < -100 && isup) {
+            //     $(".andtitle")
+            //         .css("margin-top", "0")
+            //         .css("opacity", "1");
+            //     // alert("ok");
+            //     isup = false;
+            // }
         }
     },
     //页面销毁前注销scroll事件

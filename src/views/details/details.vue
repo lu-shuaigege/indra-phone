@@ -65,7 +65,6 @@ export default {
         },
         response => {
           if (response.status >= 200 && response.status < 300) {
-            console.log(response.data); //请求成功，response为成功信息参数
             this.title = response.data.data.title;
             this.time = response.data.data.published_at;
             this.description = response.data.data.description;
@@ -78,7 +77,6 @@ export default {
             this.url = response.data.data.video;
             this.content = response.data.data.content;
           } else {
-            console.log(response.message); //请求失败，response为失败信息
           }
         }
       );
@@ -93,10 +91,8 @@ export default {
         },
         response => {
           if (response.status >= 200 && response.status < 300) {
-            console.log(response.data); //请求成功，response为成功信息参数
             this.bgimg = response.data.data[0].image;
           } else {
-            console.log(response.message); //请求失败，response为失败信息
           }
         }
       );

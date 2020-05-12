@@ -63,7 +63,6 @@ export default {
       this.business_id = row;
       //把页面要传的参数存到sessionStorage里面
       sessionStorage.setItem("business_id", this.business_id);
-      //   console.log(row); //此时就能拿到整行的信息
       this.$router.push({
         name: "investment",
         params: {
@@ -81,10 +80,8 @@ export default {
         },
         response => {
           if (response.status >= 200 && response.status < 300) {
-            console.log(response.data); //请求成功，response为成功信息参数
             this.fourimg = response.data.data;
           } else {
-            console.log(response.message); //请求失败，response为失败信息
           }
         }
       );
@@ -95,7 +92,6 @@ export default {
       $(window).scroll(function() {
         let istitle =
           $(".four").offset().top - $(window).scrollTop() - $(window).height();
-        console.log(istitle);
         if (istitle < -100 && isup) {
           $(".four")
             .css("margin-top", "0")

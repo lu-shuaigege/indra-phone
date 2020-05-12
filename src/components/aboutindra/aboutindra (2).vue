@@ -37,7 +37,6 @@ export default {
   methods: {
     about: function() {
       // var four = document.getElementsByClassName("four")[0].offsetTop;
-      // console.log(four);
       var isok = true;
       $(window).scroll(function() {
         let about =
@@ -47,7 +46,6 @@ export default {
         // $(".wordcontent").offset().top -
         //   $(window).scrollTop() -
         //   $(window).height();
-        console.log(about);
         if (about < -100 && isok) {
           $(".wordcontent")
             .css("margin-top", "0")

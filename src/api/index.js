@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 let http = axios.create({
-  baseURL: 'http://indra.dev.zhangxinkeji.com/api/',
+  baseURL: 'http://www.indra-media.com/api/',
   withCredentials: false,
   headers: {
     'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8',
